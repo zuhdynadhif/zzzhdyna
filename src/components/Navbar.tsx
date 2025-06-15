@@ -1,34 +1,105 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { Menu, X } from 'lucide-react';
 
 interface NavbarProps {
-  scrollY: number;
+  scrollY?: number;
   neumorphismStyle: React.CSSProperties;
-  neumorphismButton: React.CSSProperties;
+  neumorphismInset: React.CSSProperties;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ scrollY, neumorphismStyle, neumorphismButton }) => {
+const Navbar: React.FC<NavbarProps> = ({ neumorphismStyle, neumorphismInset }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10);
+      if (isOpen) setIsOpen(false); // Close menu on scroll
+    };
+    
+    const handleClickOutside = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (isOpen && !target.closest('nav')) {
+        setIsOpen(false);
+      }
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('mousedown', handleClickOutside);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isOpen]);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  // Menu items in the desired order
+  const menuItems = [
+    { href: "#about", label: "About" },
+    { href: "#projects", label: "Projects" },
+    { href: "#education", label: "Education" },
+    { href: "#experience", label: "Experience" },
+    { href: "#courses", label: "Courses" },
+    { href: "#contact", label: "Contact" },
+  ];
+
   return (
     <nav 
-      className="fixed top-0 w-full z-50 p-4 transition-all duration-300"
-      style={{
-        ...neumorphismStyle,
-        borderRadius: scrollY > 50 ? '0 0 20px 20px' : '0',
-        transform: scrollY > 50 ? 'translateY(0)' : 'translateY(-10px)',
-        opacity: scrollY > 50 ? 0.95 : 0
-      }}
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 py-4 px-6 ${
+        scrolled ? 'shadow-lg bg-white bg-opacity-80 backdrop-blur-sm' : ''
+      }`}
+      style={scrolled ? neumorphismStyle : {}}
     >
-      <div className="max-w-6xl mx-auto flex justify-between items-center">
-        <h2 className="text-xl font-bold text-gray-800">Portfolio</h2>
-        <div className="flex space-x-4">
-          {['Intro', 'Education', 'Projects', 'Experience'].map((item) => (
-            <button
-              key={item}
-              className="px-4 py-2 text-gray-700 hover:text-blue-600 transition-colors"
-              style={neumorphismButton}
-              onClick={() => document.getElementById(item.toLowerCase())?.scrollIntoView({ behavior: 'smooth' })}
+      <div className="max-w-6xl mx-auto flex items-center justify-between">
+        <Link href="/" className="text-xl md:text-2xl font-bold text-gray-800">
+          <span className="hidden xs:inline">Muhammad </span>Hendro Pradana
+        </Link>        {/* Mobile menu button */}
+        <button 
+          onClick={toggleMenu} 
+          className="md:hidden focus:outline-none p-2 rounded-lg"
+          aria-label="Toggle menu"
+          style={neumorphismInset}
+        >
+          {isOpen ? (
+            <X size={24} className="text-gray-800" />
+          ) : (
+            <Menu size={24} className="text-gray-800" />
+          )}
+        </button>        {/* Desktop menu */}
+        <div className="hidden md:flex space-x-6">
+          {menuItems.map((item) => (
+            <Link 
+              key={item.href} 
+              href={item.href} 
+              className="text-gray-800 hover:text-blue-600 transition-colors"
             >
-              {item}
-            </button>
+              {item.label}
+            </Link>
+          ))}
+        </div>
+      </div>      {/* Mobile menu dropdown */}
+      <div 
+        className={`md:hidden transition-all duration-300 overflow-hidden ${
+          isOpen 
+          ? 'max-h-[400px] opacity-100 mt-4 py-4 bg-white rounded-lg shadow-lg' 
+          : 'max-h-0 opacity-0'
+        }`}
+        style={isOpen ? neumorphismStyle : {}}
+      >        <div className="flex flex-col space-y-2 px-4">
+          {menuItems.map((item) => (
+            <Link 
+              key={item.href}
+              href={item.href} 
+              className="text-gray-800 hover:text-blue-600 py-3 px-4 rounded transition-colors hover:bg-gray-100 active:bg-gray-200 flex items-center"
+              onClick={() => setIsOpen(false)}
+              style={neumorphismInset}
+            >
+              {item.label}
+            </Link>
           ))}
         </div>
       </div>

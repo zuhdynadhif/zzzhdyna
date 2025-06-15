@@ -49,7 +49,7 @@ const Portfolio = () => {
       <Navbar 
         scrollY={scrollY} 
         neumorphismStyle={neumorphismStyle} 
-        neumorphismButton={neumorphismButton} 
+        neumorphismInset={neumorphismInset} 
       />
       
       <HeroSection 
