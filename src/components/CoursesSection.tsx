@@ -14,24 +14,29 @@ const CoursesSection: React.FC<CoursesSectionProps> = ({ scrollY, neumorphismSty
       <div className="max-w-6xl mx-auto">
         <div 
           className="text-center mb-16 p-8"
-          style={neumorphismStyle}
+          style={{
+            ...neumorphismStyle,
+            opacity: scrollY > 1350 ? 1 : 0.4
+          }}
         >
           <Code size={48} className="text-green-600 mx-auto mb-4" />
           <h2 className="text-4xl font-bold text-gray-800 mb-4">Notable Courses</h2>
           <p className="text-gray-600 text-lg">Key courses that shaped my technical foundation</p>
-        </div>
-        
+        </div>          
         <div className="grid md:grid-cols-2 gap-6">
-          {coursesData.map((course, index) => (
-            <div
-              key={course.id}
-              className="p-6 transition-all duration-500"
-              style={{
-                ...neumorphismStyle,
-                transform: `scale(${1 + Math.sin((scrollY - 1400 + index * 50) * 0.002) * 0.02})`,
-                opacity: scrollY > 1300 + index * 50 ? 1 : 0.4
-              }}
-            >
+          {coursesData.map((course, index) => {
+            const styleGroup = Math.floor(index/2);
+            
+            return (
+              <div
+                key={course.id}
+                className="p-6 transition-all duration-500"
+                style={{
+                  ...neumorphismStyle,
+                  transform: `scale(${1 + Math.sin((scrollY - 1400 + styleGroup * 100) * 0.002) * 0.02})`,
+                  opacity: scrollY > 1300 + styleGroup * 450 ? 1 : 0.4
+                }}
+              >
               <div className="flex justify-between items-start mb-3">
                 <h3 className="text-lg font-bold text-gray-800">{course.name}</h3>
                 <span className="text-sm text-blue-600 font-semibold">{course.year}</span>
@@ -44,7 +49,8 @@ const CoursesSection: React.FC<CoursesSectionProps> = ({ scrollY, neumorphismSty
                 {course.category}
               </span>
             </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

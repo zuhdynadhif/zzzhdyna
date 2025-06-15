@@ -15,7 +15,7 @@ const EducationSection: React.FC<EducationSectionProps> = ({ scrollY, neumorphis
           className="text-center mb-16 p-8"
           style={{
             ...neumorphismStyle,
-            transform: `translateX(${(scrollY - 800) * 0.1}px)`
+            opacity: scrollY > 350 ? 1 : 0.4
           }}
         >
           <GraduationCap size={48} className="text-blue-600 mx-auto mb-4" />
@@ -30,8 +30,8 @@ const EducationSection: React.FC<EducationSectionProps> = ({ scrollY, neumorphis
               className="p-8 transition-all duration-500"
               style={{
                 ...neumorphismStyle,
-                transform: `translateY(${Math.max(0, (scrollY - 1000 - index * 100)) * 0.1}px)`,
-                opacity: scrollY > 900 + index * 100 ? 1 : 0.3
+                transform: `scale(${1 + Math.sin((scrollY - 1400 + index * 50) * 0.002) * 0.02})`,
+                opacity: scrollY > 650 + 150 * index ? 1 : 0.4
               }}
             >
               <div className="flex justify-between items-start mb-4">
