@@ -2,12 +2,12 @@ import React from 'react';
 import { Users } from 'lucide-react';
 import organizationData from '../data/experience';
 
-interface OrganizationSectionProps {
+interface ExperienceSectionProps {
   scrollY: number;
   neumorphismStyle: React.CSSProperties;
 }
 
-const OrganizationSection: React.FC<OrganizationSectionProps> = ({ 
+const ExperienceSection: React.FC<ExperienceSectionProps> = ({ 
   scrollY, 
   neumorphismStyle 
 }) => {
@@ -31,8 +31,8 @@ const OrganizationSection: React.FC<OrganizationSectionProps> = ({
               style={{
                 ...neumorphismStyle,
                 transform: `translateX(${index % 2 === 0 ? 
-                  Math.max(-100, (scrollY - 2800 - index * 150) * 0.08) : 
-                  Math.min(100, -(scrollY - 2800 - index * 150) * 0.08)}px)`,
+                  Math.max(-300, (scrollY - 2800 - (index%2) * 300) * 0.2) : 
+                  Math.min(300, -(scrollY - 2800 - (index%2) * 300) * 0.2)}px)`,
                 opacity: scrollY > 2700 + index * 150 ? 1 : 0.2
               }}
             >
@@ -54,4 +54,4 @@ const OrganizationSection: React.FC<OrganizationSectionProps> = ({
   );
 };
 
-export default OrganizationSection;
+export default ExperienceSection;

@@ -7,7 +7,7 @@ import EducationSection from '../components/EducationSection';
 import CoursesSection from '../components/CoursesSection';
 import ProjectsSection from '../components/ProjectsSection';
 import TechStackSection from '../components/TechStackSection';
-import OrganizationSection from '../components/ExperienceSection';
+import ExperienceSection from '../components/ExperienceSection';
 import CompetitionSection from '../components/CompetitionSection';
 import Footer from '../components/Footer';
 
@@ -71,6 +71,11 @@ const Portfolio = () => {
         neumorphismStyle={neumorphismStyle} 
       />
       
+      <ExperienceSection 
+        scrollY={scrollY} 
+        neumorphismStyle={neumorphismStyle} 
+      />
+      
       <CoursesSection 
         scrollY={scrollY} 
         neumorphismStyle={neumorphismStyle} 
@@ -81,11 +86,6 @@ const Portfolio = () => {
         scrollY={scrollY} 
         neumorphismStyle={neumorphismStyle} 
         neumorphismInset={neumorphismInset} 
-      />
-      
-      <OrganizationSection 
-        scrollY={scrollY} 
-        neumorphismStyle={neumorphismStyle} 
       />
       
       <CompetitionSection 
