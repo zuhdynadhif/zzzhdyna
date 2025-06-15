@@ -28,8 +28,8 @@ const organizationData: Organization[] = [
   },
   {
     id: 4,
-    name: "Ramadhan Camp by BSI Scholarship",
-    role: "Treasurer",
+    name: "Treasurer of Ramadhan Camp",
+    role: "BSI Scholarship",
     type: "Committee",
     period: "Mar 2024 - Apr 2024",
     description: "Organized a community service event during the holy month of Ramadhan, managing the budget with sistematis workflow and ensuring transparency in financial transactions. Collaborated with a team to provide educational and spiritual activities for the high school students in Jakarta."
