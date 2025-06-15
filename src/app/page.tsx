@@ -7,7 +7,7 @@ import EducationSection from '../components/EducationSection';
 import CoursesSection from '../components/CoursesSection';
 import ProjectsSection from '../components/ProjectsSection';
 import TechStackSection from '../components/TechStackSection';
-import OrganizationSection from '../components/OrganizationSection';
+import OrganizationSection from '../components/ExperienceSection';
 import CompetitionSection from '../components/CompetitionSection';
 import Footer from '../components/Footer';
 

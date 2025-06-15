@@ -31,7 +31,7 @@ interface TechStack {
   technologies: string[];
 }
 
-interface Organization {
+interface Experience {
   id: number;
   name: string;
   role: string;
@@ -54,6 +54,6 @@ export type {
   Course,
   Project,
   TechStack,
-  Organization,
+  Experience as Organization,
   Competition
 };

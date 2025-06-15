@@ -1,6 +1,6 @@
 import React from 'react';
 import { Users } from 'lucide-react';
-import organizationData from '../data/organizations';
+import organizationData from '../data/experience';
 
 interface OrganizationSectionProps {
   scrollY: number;
@@ -39,15 +39,10 @@ const OrganizationSection: React.FC<OrganizationSectionProps> = ({
               <div className="flex justify-between items-start mb-4">
                 <div>
                   <h3 className="text-xl font-bold text-gray-800">{org.name}</h3>
-                  <p className="text-lg text-blue-600 font-semibold">{org.role}</p>
+                  <p className="text-lg text-gray-500 font-semibold">{org.role}</p>
                 </div>
                 <div className="text-right">
                   <span className="text-gray-600 font-semibold">{org.period}</span>
-                  <div className={`mt-2 px-3 py-1 rounded-full text-sm font-semibold ${
-                    org.type === 'Organization' ? 'bg-blue-100 text-blue-800' : 'bg-purple-100 text-purple-800'
-                  }`}>
-                    {org.type}
-                  </div>
                 </div>
               </div>
               <p className="text-gray-700 leading-relaxed">{org.description}</p>
