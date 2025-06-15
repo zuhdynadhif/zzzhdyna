@@ -74,8 +74,6 @@ const Portfolio = () => {
       <ExperienceSection 
         scrollY={scrollY} 
         neumorphismStyle={neumorphismStyle} 
-        neumorphismInset={neumorphismInset} 
-        neumorphismButton={neumorphismButton} 
       />
       
       <CoursesSection 
