@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heart, Github, Linkedin, Mail } from 'lucide-react';
+import { Heart, Github, Linkedin, Mail, Instagram } from 'lucide-react';
 
 interface FooterProps {
   neumorphismStyle: React.CSSProperties;
@@ -22,7 +22,9 @@ const Footer: React.FC<FooterProps> = ({ neumorphismStyle, neumorphismButton }) 
             {[
               { icon: Github, href: "https://github.com/zuhdynadhif", label: "GitHub" },
               { icon: Linkedin, href: "https://www.linkedin.com/in/zuhdynadhifayyasy/", label: "LinkedIn" },
-              { icon: Mail, href: "mailto:zuhdy.nadhif.ayyasy@gmail.com", label: "Email" }
+              { icon: Mail, href: "mailto:zuhdy.nadhif.ayyasy@gmail.com", label: "Email" },
+              // instagram
+              { icon: Instagram, href: "https://www.instagram.com/zzzhdyna/", label: "Instagram" }
             ].map(({ icon: Icon, href, label }) => (
               <a
                 key={label}

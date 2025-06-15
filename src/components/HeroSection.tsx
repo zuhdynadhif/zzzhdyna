@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChevronDown, Github, Linkedin, Mail } from 'lucide-react';
+import { ChevronDown, Github, Linkedin, Mail, Instagram } from 'lucide-react';
 
 interface HeroSectionProps {
   scrollY: number;
@@ -27,7 +27,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollY, neumorphismStyle, ne
           Hi, I&apos;m <span className="text-blue-600">Zuhdy Nadhif Ayyasy</span>
         </h1>
         <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-          Computer Science Student | Awardee BSI Scholarship
+          Computer Science Student | Awardee BSI Scholarship | Free Palestine 𓂆🍉
         </p>
         <p className="text-lg text-gray-700 mb-12 max-w-2xl mx-auto">
           Passionate about creating innovative solutions through code. Currently pursuing my degree 
@@ -37,7 +37,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollY, neumorphismStyle, ne
           {[
             { icon: Github, href: "https://github.com/zuhdynadhif", label: "GitHub" },
             { icon: Linkedin, href: "https://www.linkedin.com/in/zuhdynadhifayyasy/", label: "LinkedIn" },
-            { icon: Mail, href: "mailto:zuhdy.nadhif.ayyasy@gmail.com", label: "Email" }
+            { icon: Mail, href: "mailto:zuhdy.nadhif.ayyasy@gmail.com", label: "Email" },
+            { icon: Instagram, href: "https://www.instagram.com/zzzhdyna/", label: "Instagram" }
           ].map(({ icon: Icon, href, label }) => (
             <a
               key={label}

@@ -25,7 +25,15 @@ const organizationData: Organization[] = [
     type: "Professional",
     period: "Aug 2023 - Dec 2023",
     description: "Deliver student assignments covering various topics such as logic to proof methods, ensuring understanding of mathematical concepts."
-  }
+  },
+  {
+    id: 4,
+    name: "Ramadhan Camp by BSI Scholarship",
+    role: "Treasurer",
+    type: "Committee",
+    period: "Mar 2024 - Apr 2024",
+    description: "Organized a community service event during the holy month of Ramadhan, managing the budget with sistematis workflow and ensuring transparency in financial transactions. Collaborated with a team to provide educational and spiritual activities for the high school students in Jakarta."
+  },
 ];
 
 export default organizationData;

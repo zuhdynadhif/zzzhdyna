@@ -3,12 +3,12 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import HeroSection from '../components/HeroSection';
-import EducationSection from '../components/EducationSection';
-import CoursesSection from '../components/CoursesSection';
 import ProjectsSection from '../components/ProjectsSection';
-import TechStackSection from '../components/TechStackSection';
+import EducationSection from '../components/EducationSection';
 import ExperienceSection from '../components/ExperienceSection';
-import CompetitionSection from '../components/CompetitionSection';
+import CoursesSection from '../components/CoursesSection';
+// import TechStackSection from '../components/TechStackSection';
+// import CompetitionSection from '../components/CompetitionSection';
 import Footer from '../components/Footer';
 
 const Portfolio = () => {
@@ -82,7 +82,7 @@ const Portfolio = () => {
         neumorphismInset={neumorphismInset} 
       />
       
-      <TechStackSection 
+      {/* <TechStackSection 
         scrollY={scrollY} 
         neumorphismStyle={neumorphismStyle} 
         neumorphismInset={neumorphismInset} 
@@ -92,7 +92,7 @@ const Portfolio = () => {
         scrollY={scrollY} 
         neumorphismStyle={neumorphismStyle} 
         neumorphismInset={neumorphismInset} 
-      />
+      /> */}
       
       <Footer 
         neumorphismStyle={neumorphismStyle} 
