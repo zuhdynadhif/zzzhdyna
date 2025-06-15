@@ -1,9 +1,6 @@
-interface TechStackCategory {
-  category: string;
-  technologies: string[];
-}
+import { TechStack } from "../types/index";
 
-const techStackData: TechStackCategory[] = [
+const techStackData: TechStack[] = [
   {
     category: "Frontend",
     technologies: [

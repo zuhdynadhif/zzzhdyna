@@ -21,7 +21,7 @@ interface Project {
   title: string;
   description: string;
   technologies: string[];
-  status: 'Completed' | 'In Progress' | 'Planned';
+  status: 'Planning' | 'Completed' | 'In Progress' | 'Planned';
   github?: string;
   demo?: string;
 }

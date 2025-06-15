@@ -1,10 +1,4 @@
-interface Course {
-  id: number;
-  name: string;
-  provider: string;
-  year: string;
-  category: string;
-}
+import { Course } from "../types/index";
 
 const coursesData: Course[] = [
   {

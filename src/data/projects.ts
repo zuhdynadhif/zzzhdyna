@@ -1,12 +1,4 @@
-interface Project {
-  id: number;
-  title: string;
-  description: string;
-  technologies: string[];
-  status: string;
-  github?: string;
-  demo?: string;
-}
+import { Project } from "../types/index";
 
 const projectsData: Project[] = [
   {

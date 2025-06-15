@@ -1,11 +1,4 @@
-interface Education {
-  id: number;
-  institution: string;
-  degree: string;
-  location: string;
-  period: string;
-  gpa?: string;
-}
+import { Education } from "../types/index";
 
 const educationData: Education[] = [
   {
