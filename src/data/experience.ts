@@ -6,9 +6,9 @@ const organizationData: Organization[] = [
     id: 1,
     name: "Teaching Assistant of Data Structures and Algorithms",
     role: "Lembaga Asisten Fasilkom UI",
-    type: "Organization",
+    type: "Professional",
     period: "2022 - 2023",
-    description: "Led a team of 15 members in developing and maintaining the organization's website and internal applications. Organized tech workshops and coding competitions for over 500 students."
+    description: "Collaborated with team of three to deliver programming assignments and two mini-projects for various concepts from basic data structures to dynamic programming. Assisted students in understanding complex algorithms and data structures, enhancing their problem-solving skills."
   },
   {
     id: 2,
@@ -17,6 +17,14 @@ const organizationData: Organization[] = [
     type: "Organization",
     period: "May 2024 - Jan 2025",
     description: "Led the Open Tender process for BETIS Fasilkom UI within a three-month selection period and monitoring the implementation of the project of Human Resource Development of BEM Fasilkom UI."
+  },
+  {
+    id: 3,
+    name: "Teaching Assistant of Discrete Mathematics 1",
+    role: "Lembaga Asisten Fasilkom UI",
+    type: "Professional",
+    period: "Aug 2023 - Dec 2023",
+    description: "Deliver student assignments covering various topics such as logic to proof methods, ensuring understanding of mathematical concepts."
   }
 ];
 

@@ -37,7 +37,7 @@ interface Experience {
   role: string;
   period: string;
   description: string;
-  type: 'Organization' | 'Committee';
+  type: 'Professional' | 'Organization' | 'Committee';
 }
 
 interface Competition {
