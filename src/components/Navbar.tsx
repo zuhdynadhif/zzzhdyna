@@ -3,17 +3,31 @@ import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 
 interface NavbarProps {
-  scrollY?: number;
   neumorphismStyle: React.CSSProperties;
   neumorphismInset: React.CSSProperties;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ neumorphismStyle, neumorphismInset }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+const Navbar: React.FC<NavbarProps> = ({ neumorphismStyle, neumorphismInset }) => {  const [isOpen, setIsOpen] = useState(false);
+  const [prevScrollY, setPrevScrollY] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 10);
+      const currentScrollY = window.scrollY;
+      
+      // Determine scroll direction and position
+      if (currentScrollY > prevScrollY && currentScrollY > 150) {
+        // Scrolling down & not at the top - hide nav
+        setIsVisible(false);
+      } else if (currentScrollY > 50) {
+        // Scrolling up & not at the very top - show nav
+        setIsVisible(true);
+      } else {      // At the top - hide nav
+        setIsVisible(false);
+      }
+      
+      setPrevScrollY(currentScrollY);
+      
       if (isOpen) setIsOpen(false); // Close menu on scroll
     };
     
@@ -27,14 +41,20 @@ const Navbar: React.FC<NavbarProps> = ({ neumorphismStyle, neumorphismInset }) =
     window.addEventListener('scroll', handleScroll);
     window.addEventListener('mousedown', handleClickOutside);
     
+    // Initial check
+    handleScroll();
+    
     return () => {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [isOpen]);
+  }, [isOpen, prevScrollY]);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+    if (!isOpen) {
+      setIsVisible(true); // Always show nav when menu is opened
+    }
   };
 
   // Menu items in the desired order
@@ -45,14 +65,12 @@ const Navbar: React.FC<NavbarProps> = ({ neumorphismStyle, neumorphismInset }) =
     { href: "#experience", label: "Experience" },
     { href: "#courses", label: "Courses" },
     { href: "#contact", label: "Contact" },
-  ];
-
-  return (
+  ];  return (
     <nav 
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 py-4 px-6 ${
-        scrolled ? 'shadow-lg bg-white bg-opacity-80 backdrop-blur-sm' : ''
+      className={`fixed w-full z-50 transition-all duration-300 py-4 px-6 ${
+        (isVisible || isOpen) ? 'shadow-lg bg-white bg-opacity-80 backdrop-blur-sm top-0' : 'top-[-100px]'
       }`}
-      style={scrolled ? neumorphismStyle : {}}
+      style={(isVisible || isOpen) ? neumorphismStyle : {}}
     >
       <div className="max-w-6xl mx-auto flex items-center justify-between">
         <Link href="/" className="text-xl md:text-2xl font-bold text-gray-800">
