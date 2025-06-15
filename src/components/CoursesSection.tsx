@@ -43,7 +43,7 @@ const CoursesSection: React.FC<CoursesSectionProps> = ({ scrollY, neumorphismSty
               </div>
               <p className="text-gray-600 mb-2">{course.provider}</p>
               <span 
-                className="inline-block px-3 py-1 text-sm font-semibold rounded-full"
+                className="inline-block text-black px-3 py-1 text-sm rounded-full"
                 style={neumorphismInset}
               >
                 {course.category}
