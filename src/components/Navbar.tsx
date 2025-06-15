@@ -74,7 +74,7 @@ const Navbar: React.FC<NavbarProps> = ({ neumorphismStyle, neumorphismInset }) =
     >
       <div className="max-w-6xl mx-auto flex items-center justify-between">
         <Link href="/" className="text-xl md:text-2xl font-bold text-gray-800">
-          <span className="hidden xs:inline">Muhammad </span>Hendro Pradana
+          <span className="hidden xs:inline"></span>Zuhdy Nadhif Ayyasy
         </Link>        {/* Mobile menu button */}
         <button 
           onClick={toggleMenu} 
