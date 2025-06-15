@@ -59,6 +59,13 @@ const Portfolio = () => {
         neumorphismButton={neumorphismButton} 
       />
       
+      <ProjectsSection 
+        scrollY={scrollY} 
+        neumorphismStyle={neumorphismStyle} 
+        neumorphismInset={neumorphismInset} 
+        neumorphismButton={neumorphismButton} 
+      />
+      
       <EducationSection 
         scrollY={scrollY} 
         neumorphismStyle={neumorphismStyle} 
@@ -68,13 +75,6 @@ const Portfolio = () => {
         scrollY={scrollY} 
         neumorphismStyle={neumorphismStyle} 
         neumorphismInset={neumorphismInset} 
-      />
-      
-      <ProjectsSection 
-        scrollY={scrollY} 
-        neumorphismStyle={neumorphismStyle} 
-        neumorphismInset={neumorphismInset} 
-        neumorphismButton={neumorphismButton} 
       />
       
       <TechStackSection 

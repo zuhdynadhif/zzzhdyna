@@ -76,13 +76,16 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                   <h4 className="text-sm font-semibold text-gray-600 mb-3">Technologies Used:</h4>
                   <div className="flex flex-wrap gap-2">
                     {project.technologies.map((tech) => (
-                      <span
+                      <a
+                        href={`https://www.google.com/search?q=${encodeURIComponent(tech)}`}
                         key={tech}
-                        className="px-3 py-1 text-sm font-medium text-gray-700"
+                        className="px-3 py-1 text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors cursor-pointer"
                         style={neumorphismInset}
+                        target="_blank"
+                        rel="noopener noreferrer"
                       >
                         {tech}
-                      </span>
+                      </a>
                     ))}
                   </div>
                 </div>
