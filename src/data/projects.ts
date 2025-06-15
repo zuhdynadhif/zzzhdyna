@@ -3,37 +3,52 @@ import { Project } from "../types/index";
 const projectsData: Project[] = [
   {
     id: 1,
-    title: "Portfolio Website",
-    description: "Personal portfolio website built with modern web technologies showcasing projects, skills, and experience.",
-    technologies: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
+    title: "Geospatial Data Visualization - PantauTular",
+    description: "A geospatial data visualization application that allows users to explore and analyze the spread of infectious diseases in Indonesia. Collaborated with Badan Riset dan Inovasi Nasional (BRIN) to develop this application, which features interactive maps and statistical data visualizations.",
+    technologies: ["Next.js", "PostgreSQL", "AmCharts"],
     status: "Completed",
-    github: "https://github.com/zuhdynadhif/portfolio",
-    demo: "https://zuhdynadhif.vercel.app/"
+    github: "https://github.com/orgs/PPL-BRIN/repositories",
+    demo: "https://pantautular.netlify.app",
   },
   {
     id: 2,
-    title: "E-Learning Platform",
-    description: "A comprehensive e-learning platform for university students with features like course management, assignments, and grading.",
-    technologies: ["React", "Node.js", "Express", "MongoDB", "Socket.io"],
-    status: "In Progress",
-    github: "https://github.com/zuhdynadhif/e-learning"
+    title: "Search Engine Application - Temanusa",
+    description: "Manuscript search engine application for Indonesian researchers, providing advanced search features and a user-friendly interface. Built using Scrapy as the web scraping framework and Elasticsearch for indexing and searching manuscripts.",
+    technologies: ["Scrapy", "Elasticsearch"],
+    status: "Completed",
+    demo: "https://www.temanusa.com/id"
   },
   {
     id: 3,
-    title: "Health Monitoring App",
-    description: "Mobile application for tracking health metrics like heart rate, steps, and sleep patterns with data visualization.",
-    technologies: ["Flutter", "Firebase", "GraphQL"],
+    title: "Search Engine Application - Finsearch",
+    description: "A search engine application for financial news and articles. Developed as final project for the Information Retrieval course, it features a web interface for searching.",
+    technologies: ["Vue.js", "Fast API"],
     status: "Completed",
-    github: "https://github.com/zuhdynadhif/health-monitor",
-    demo: "https://play.google.com/store/apps/healthmonitor"
+    github: "https://github.com/ghanahmada/finsearch-be",
   },
   {
     id: 4,
-    title: "Smart Home Automation System",
-    description: "IoT-based home automation system for controlling lights, temperature, and security with a mobile app interface.",
-    technologies: ["Arduino", "React Native", "MQTT", "AWS IoT"],
-    status: "Planning",
-    github: "https://github.com/zuhdynadhif/smart-home"
+    title: "Music Catalogue Application - Marmut",
+    description: "A music catalogue application that allows users to search and discover music tracks. Developed using Django and PostgreSQL, it features a raw SQL database for storing music metadata. Developed as a final project for the Database course.",
+    technologies: ["PostgreSQL", "Django"],
+    status: "Completed",
+    github: "https://github.com/zuhdynadhif/F11_Basdat"
+  },
+  {
+    id: 5,
+    title: "E-commerce Platform - Toytopia",
+    description: "An e-commerce platform for buying and selling toys, featuring product listings. Developed as a final project for the Advanced Programming course, it includes a web interface for users to browse and purchase toys.",
+    technologies: ["Django", "PostgreSQL", "Microservices", "RESTful API"],
+    status: "Completed",
+    github: "https://github.com/orgs/advpro-b3/repositories"
+  },
+  {
+    id: 6,
+    title: "Bookstore Application - ReadNow",
+    description: "A bookstore application that allows users to browse and borrow books. Developed as a final project for the Platform-Based Programming course, it features a web and mobile interface for users to search and borrow books.",
+    technologies: ["Flutter", "Django", "PostgreSQL"],
+    status: "Completed",
+    github: "https://github.com/ReadNow-C14"
   }
 ];
 

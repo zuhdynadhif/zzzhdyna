@@ -33,7 +33,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
             const fromLeft = index % 2 === 0;
 
             // Jarak animasi dan ambang batas scroll
-            const threshold = 2500 + groupIndex * 300;
+            const threshold = 2200 + groupIndex * 430;
             const maxDistance = 150;
 
             // Hitung offset X
