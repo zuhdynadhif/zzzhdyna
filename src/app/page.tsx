@@ -47,7 +47,6 @@ const Portfolio = () => {
   return (
     <div className="min-h-screen" style={{ background: '#e0e5ec' }}>
       <Navbar 
-        scrollY={scrollY} 
         neumorphismStyle={neumorphismStyle} 
         neumorphismInset={neumorphismInset} 
       />
