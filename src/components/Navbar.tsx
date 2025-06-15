@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
@@ -65,17 +67,16 @@ const Navbar: React.FC<NavbarProps> = ({ neumorphismStyle, neumorphismInset }) =
     { href: "#experience", label: "Experience" },
     { href: "#courses", label: "Courses" },
     { href: "#contact", label: "Contact" },
-  ];  return (
-    <nav 
+  ];  return (    <nav 
       className={`fixed w-full z-50 transition-all duration-300 py-4 px-6 ${
         (isVisible || isOpen) ? 'shadow-lg bg-white bg-opacity-80 backdrop-blur-sm top-0' : 'top-[-100px]'
-      }`}
+      } overflow-x-hidden`}
       style={(isVisible || isOpen) ? neumorphismStyle : {}}
     >
-      <div className="max-w-6xl mx-auto flex items-center justify-between">
-        <Link href="/" className="text-xl md:text-2xl font-bold text-gray-800">
+      <div className="max-w-6xl mx-auto flex items-center justify-between flex-wrap">
+        <Link href="/" className="text-lg md:text-xl lg:text-2xl font-bold text-gray-800 truncate max-w-[220px] sm:max-w-none">
           <span className="hidden xs:inline"></span>Zuhdy Nadhif Ayyasy
-        </Link>        {/* Mobile menu button */}
+        </Link>{/* Mobile menu button */}
         <button 
           onClick={toggleMenu} 
           className="md:hidden focus:outline-none p-2 rounded-lg"

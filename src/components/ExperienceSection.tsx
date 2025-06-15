@@ -27,28 +27,49 @@ const ExperienceSection: React.FC<ExperienceSectionProps> = ({
           </div>
           
           <div className="space-y-8">
-            {organizationData.map((org, index) => (
-              <div
-                key={org.id}
-                className="p-8 transition-all duration-600"
-                style={{
-                  ...neumorphismStyle,
-                  transform: `translateY(${scrollY > 2800 ? 0 : 100}px)`,
-                  opacity: scrollY > 2700 + index * 150 ? 1 : 0.2
-                }}
-              >
-                <div className="flex justify-between items-start mb-4">
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-800">{org.name}</h3>
-                    <p className="text-lg text-gray-500 font-semibold">{org.role}</p>
+            {organizationData.map((org, index) => {
+              const groupIndex = Math.floor(index / 2);
+              const fromLeft = index % 2 === 0;
+
+              // Jarak animasi dan ambang batas scroll
+              const threshold = 700 + groupIndex * 430;
+              const maxDistance = 150;            // Hitung offset X
+              let offsetX = fromLeft
+                ? Math.min(0, -(threshold - scrollY) * 0.5)
+                : Math.max(0, (threshold - scrollY) * 0.5);
+
+              // Clamp agar tidak lewat batas maxDistance
+              offsetX = fromLeft
+                ? Math.max(-maxDistance, offsetX)
+                : Math.min(maxDistance, offsetX);
+
+              // Hitung opacity
+              const opacity = scrollY > threshold - 100 ? 1 : 0;
+
+              return (
+                <div
+                  key={org.id}
+                  className="p-8 transition-all duration-700 ease-out"
+                  style={{
+                    ...neumorphismStyle,
+                    transform: `translateX(${offsetX}px)`,
+                    opacity,
+                    maxWidth: '100%'
+                  }}
+                >
+                  <div className="flex justify-between items-start mb-4">
+                    <div>
+                      <h3 className="text-xl font-bold text-gray-800">{org.name}</h3>
+                      <p className="text-lg text-gray-500 font-semibold">{org.role}</p>
+                    </div>
+                    <div className="text-right">
+                      <span className="text-gray-600 font-semibold">{org.period}</span>
+                    </div>
                   </div>
-                  <div className="text-right">
-                    <span className="text-gray-600 font-semibold">{org.period}</span>
-                  </div>
+                  <p className="text-gray-700 leading-relaxed">{org.description}</p>
                 </div>
-                <p className="text-gray-700 leading-relaxed">{org.description}</p>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>

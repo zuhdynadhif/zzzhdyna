@@ -12,9 +12,8 @@ const CompetitionSection: React.FC<CompetitionSectionProps> = ({
   scrollY, 
   neumorphismStyle,
   neumorphismInset
-}) => {
-  return (
-    <section id="competitions" className="py-20 p-8">
+}) => {  return (
+    <section id="competitions" className="py-20 p-8 overflow-x-hidden">
       <div className="max-w-6xl mx-auto">
         <div 
           className="text-center mb-16 p-8"

@@ -8,8 +8,7 @@ interface CoursesSectionProps {
   neumorphismInset: React.CSSProperties;
 }
 
-const CoursesSection: React.FC<CoursesSectionProps> = ({ scrollY, neumorphismStyle, neumorphismInset }) => {
-  return (
+const CoursesSection: React.FC<CoursesSectionProps> = ({ scrollY, neumorphismStyle, neumorphismInset }) => {  return (
     <section id="courses" className="py-20 p-8">
       <div className="max-w-6xl mx-auto">
         <div 
@@ -29,9 +28,7 @@ const CoursesSection: React.FC<CoursesSectionProps> = ({ scrollY, neumorphismSty
             const fromLeft = index % 2 === 0;
 
             const threshold = 4200 + groupIndex * 150;
-            const maxDistance = 150;
-
-            let offsetX = fromLeft
+            const maxDistance = 150;            let offsetX = fromLeft
               ? Math.min(0, -(threshold - scrollY) * 0.5)
               : Math.max(0, (threshold - scrollY) * 0.5);
 

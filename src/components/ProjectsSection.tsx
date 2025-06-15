@@ -16,7 +16,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
   neumorphismButton 
 }) => {
   return (
-    <section id="projects" className="py-20 p-8">
+    <section id="projects" className="py-20 p-8 overflow-x-hidden">
       <div className="max-w-6xl mx-auto">
         <div 
           className="text-center mb-16 p-8"
@@ -34,9 +34,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
 
             // Jarak animasi dan ambang batas scroll
             const threshold = 700 + groupIndex * 430;
-            const maxDistance = 150;
-
-            // Hitung offset X
+            const maxDistance = 150;            // Hitung offset X
             let offsetX = fromLeft
               ? Math.min(0, -(threshold - scrollY) * 0.5)
               : Math.max(0, (threshold - scrollY) * 0.5);
@@ -57,6 +55,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                   ...neumorphismStyle,
                   transform: `translateX(${offsetX}px)`,
                   opacity,
+                  maxWidth: '100%'
                 }}
               >
                 <div className="flex justify-between items-start mb-4">
