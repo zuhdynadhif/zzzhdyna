@@ -95,7 +95,8 @@ const Portfolio = () => {
       
       <Footer 
         neumorphismStyle={neumorphismStyle} 
-        neumorphismButton={neumorphismButton} 
+        neumorphismButton={neumorphismButton}
+        neumorphismInset={neumorphismInset}
       />
     </div>
   );

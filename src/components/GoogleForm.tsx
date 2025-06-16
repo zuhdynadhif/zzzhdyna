@@ -1,14 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 const GOOGLE_FORM_URL = "https://docs.google.com/forms/u/0/d/e/1FAIpQLScOz03xsxstFTqwUFwYPKj3kxLp0YguMKAGQbOPtG95mzhgcA/formResponse";
+const COOLDOWN_SECONDS = 5; // Cooldown period in seconds
 
 interface GoogleFormProps {
   neumorphismButton: React.CSSProperties;
+  neumorphismInset: React.CSSProperties; // Added neumorphismInset
 }
 
-const GoogleForm: React.FC<GoogleFormProps> = ({ neumorphismButton }) => {
+const GoogleForm: React.FC<GoogleFormProps> = ({ neumorphismButton, neumorphismInset }) => { // Destructure neumorphismInset
   const [message, setMessage] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [cooldownActive, setCooldownActive] = useState(false);
+  const [cooldownTimeRemaining, setCooldownTimeRemaining] = useState(0);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+
+  useEffect(() => {
+    // Clear interval on component unmount
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
+    };
+  }, []);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setMessage(event.target.value);
@@ -16,6 +30,10 @@ const GoogleForm: React.FC<GoogleFormProps> = ({ neumorphismButton }) => {
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
+    if (cooldownActive) {
+      return;
+    }
 
     if (!message.trim()) {
       alert("Message cannot be empty. Please type a message.");
@@ -36,7 +54,22 @@ const GoogleForm: React.FC<GoogleFormProps> = ({ neumorphismButton }) => {
         },
         body: formData,
       });
-      setMessage('');
+      setMessage(''); // Clear input after successful submission
+
+      // Start cooldown
+      setCooldownActive(true);
+      setCooldownTimeRemaining(COOLDOWN_SECONDS);
+      intervalRef.current = setInterval(() => {
+        setCooldownTimeRemaining(prevTime => {
+          if (prevTime <= 1) {
+            clearInterval(intervalRef.current!);
+            setCooldownActive(false);
+            return 0;
+          }
+          return prevTime - 1;
+        });
+      }, 1000);
+
     } catch (error) {
       console.error("Error submitting form:", error);
       alert("Something went wrong, please try again.");
@@ -66,11 +99,11 @@ const GoogleForm: React.FC<GoogleFormProps> = ({ neumorphismButton }) => {
       </div>
       <button
         type="submit"
-        className="mt-4 w-full p-3 bg-blue-500 text-gray-800 rounded-lg hover:bg-blue-600 transition-colors"
-        style={neumorphismButton}
-        disabled={isSubmitting}
+        className="mt-4 w-full p-3 text-gray-800 rounded-lg hover:bg-blue-600 transition-colors" // Removed bg-blue-500 as style will handle it
+        style={isSubmitting || cooldownActive ? neumorphismInset : neumorphismButton} // Conditional style
+        disabled={isSubmitting || cooldownActive}
       >
-        {isSubmitting ? 'Sending...' : 'Send'}
+        {isSubmitting ? 'Sending...' : cooldownActive ? `Wait ${cooldownTimeRemaining}s` : 'Send'}
       </button>
     </form>
   );

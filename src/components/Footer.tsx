@@ -5,9 +5,10 @@ import GoogleForm from './GoogleForm';
 interface FooterProps {
   neumorphismStyle: React.CSSProperties;
   neumorphismButton: React.CSSProperties;
+  neumorphismInset: React.CSSProperties;
 }
 
-const Footer: React.FC<FooterProps> = ({ neumorphismStyle, neumorphismButton }) => {
+const Footer: React.FC<FooterProps> = ({ neumorphismStyle, neumorphismButton, neumorphismInset }) => {
   return (
     <footer id="footer" className="md:py-16 p-8">
       <div className="max-w-6xl mx-auto text-center">
@@ -38,7 +39,10 @@ const Footer: React.FC<FooterProps> = ({ neumorphismStyle, neumorphismButton }) 
           ))}
           </div>
           <div className="pt-4">
-            <GoogleForm neumorphismButton={neumorphismButton}/>
+            <GoogleForm 
+              neumorphismButton={neumorphismButton} 
+              neumorphismInset={neumorphismInset}
+            />
           </div>
         </div>
         <div className="text-sm md:text-base flex items-center justify-center text-gray-600">
