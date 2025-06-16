@@ -1,5 +1,6 @@
 import React from 'react';
 import { Heart, Github, Linkedin, Mail, Instagram } from 'lucide-react';
+import GoogleForm from './GoogleForm';
 
 interface FooterProps {
   neumorphismStyle: React.CSSProperties;
@@ -35,6 +36,9 @@ const Footer: React.FC<FooterProps> = ({ neumorphismStyle, neumorphismButton }) 
             <Icon size={20} />
             </a>
           ))}
+          </div>
+          <div className="pt-4">
+            <GoogleForm neumorphismButton={neumorphismButton}/>
           </div>
         </div>
         <div className="text-sm md:text-base flex items-center justify-center text-gray-600">
