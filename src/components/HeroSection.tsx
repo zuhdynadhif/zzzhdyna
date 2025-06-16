@@ -12,11 +12,11 @@ interface HeroSectionProps {
 const HeroSection: React.FC<HeroSectionProps> = ({ scrollY, neumorphismStyle, neumorphismButton }) => {  return (
     <section
       id="intro"
-      className="h-screen flex justify-center p-4 md:p-8 w-full overflow-x-hidden box-border pb-20"
+      className="h-screen flex justify-center p-4 md:p-6 w-full overflow-x-hidden box-border"
     >
       <div
         id="intro-card"
-        className="h-full w-full max-w-4xl mx-auto text-center flex flex-col justify-center items-center p-6 pb-20 md:p-12 transform transition-all duration-500"
+        className="h-full w-full max-w-4xl mx-auto text-center flex flex-col justify-center items-center p-6 md:p-10 transform transition-all duration-500"
         style={{
           ...neumorphismStyle,
           transform: `translateY(${-scrollY * 0.1}px) scale(${1 - scrollY * 0.0001})`
@@ -34,17 +34,17 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollY, neumorphismStyle, ne
             className="object-cover rounded-lg"
           />
         </div>        
-        <h1 className="text-xl md:text-5xl font-bold text-gray-500 mb-2 md:mb-4">
+        <h1 className="text-xl md:text-3xl font-bold text-gray-500 mb-2 md:mb-4">
           Hi, I&apos;m <span className="text-black">Zuhdy Nadhif <span className='text-fuchsia-900'>Ayyasy</span></span>
         </h1>
         <p className="text-base md:text-xl text-gray-600 mb-4 md:mb-8 leading-relaxed">
           Computer Science Student | Awardee BSI Scholarship | Free Palestine 𓂆🍉
         </p>
-        <p className="text-sm md:text-xl text-gray-700 mb-6 md:mb-12 max-w-2xl mx-auto">
+        <p className="text-sm md:text-base text-gray-700 mb-6 md:mb-8 max-w-2xl mx-auto">
           Passionate about creating innovative solutions through code. Currently pursuing my degree 
           while building real-world applications and contributing to the tech community.
         </p>
-        <div className="flex justify-center space-x-4 max-w-md mb-6 md:mx-auto">
+        <div className="flex justify-center space-x-4 max-w-md md:mx-auto">
           {[
             { icon: Github, href: "https://github.com/zuhdynadhif", label: "GitHub" },
             { icon: Linkedin, href: "https://www.linkedin.com/in/zuhdynadhifayyasy/", label: "LinkedIn" },
@@ -62,7 +62,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollY, neumorphismStyle, ne
             </a>
           ))}
         </div>
-        <div className="mt-30 md:mt-12 animate-bounce">
+        <div className="mt-10 md:mt-16 animate-bounce">
           <ChevronDown size={32} className="text-gray-500 mx-auto" />
         </div>
       </div>
