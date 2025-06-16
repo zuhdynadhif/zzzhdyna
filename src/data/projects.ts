@@ -72,21 +72,7 @@ const projectsData: Project[] = [
     description: "A search engine application for financial news and articles. Developed as final project for the Information Retrieval course, it features a web interface for searching.",
     technologies: ["Vue.js", "Fast API"],
     status: "Completed",
-    github: "https://github.com/ghanahmada/finsearch-be",
-    images: [
-      {
-        src: "/pantautular/PantauTular - .jpg",
-        alt: "PantauTular - "
-      },
-      {
-        src: "/pantautular/PantauTular - .jpg",
-        alt: "PantauTular - "
-      },
-      {
-        src: "/pantautular/PantauTular - .jpg",
-        alt: "PantauTular - "
-      }
-    ] as ImageSliderContent[]
+    github: "https://github.com/ghanahmada/finsearch-be"
   },
   {
     id: 4,
@@ -94,21 +80,7 @@ const projectsData: Project[] = [
     description: "A music catalogue application that allows users to search and discover music tracks. Developed using Django and PostgreSQL, it features a raw SQL database for storing music metadata. Developed as a final project for the Database course.",
     technologies: ["PostgreSQL", "Django"],
     status: "Completed",
-    github: "https://github.com/zuhdynadhif/F11_Basdat",
-    images: [
-      {
-        src: "/pantautular/PantauTular - .jpg",
-        alt: "PantauTular - "
-      },
-      {
-        src: "/pantautular/PantauTular - .jpg",
-        alt: "PantauTular - "
-      },
-      {
-        src: "/pantautular/PantauTular - .jpg",
-        alt: "PantauTular - "
-      }
-    ] as ImageSliderContent[]
+    github: "https://github.com/zuhdynadhif/F11_Basdat"
   },
   {
     id: 5,
@@ -116,21 +88,7 @@ const projectsData: Project[] = [
     description: "An e-commerce platform for buying and selling toys, featuring product listings. Developed as a final project for the Advanced Programming course, it includes a web interface for users to browse and purchase toys.",
     technologies: ["Django", "PostgreSQL", "Microservices", "RESTful API"],
     status: "Completed",
-    github: "https://github.com/orgs/advpro-b3/repositories",
-    images: [
-      {
-        src: "/pantautular/PantauTular - .jpg",
-        alt: "PantauTular - "
-      },
-      {
-        src: "/pantautular/PantauTular - .jpg",
-        alt: "PantauTular - "
-      },
-      {
-        src: "/pantautular/PantauTular - .jpg",
-        alt: "PantauTular - "
-      }
-    ] as ImageSliderContent[]
+    github: "https://github.com/orgs/advpro-b3/repositories"
   },
   {
     id: 6,
@@ -138,21 +96,7 @@ const projectsData: Project[] = [
     description: "A bookstore application that allows users to browse and borrow books. Developed as a final project for the Platform-Based Programming course, it features a web and mobile interface for users to search and borrow books.",
     technologies: ["Flutter", "Django", "PostgreSQL"],
     status: "Completed",
-    github: "https://github.com/ReadNow-C14",
-    images: [
-      {
-        src: "/pantautular/PantauTular - .jpg",
-        alt: "PantauTular - "
-      },
-      {
-        src: "/pantautular/PantauTular - .jpg",
-        alt: "PantauTular - "
-      },
-      {
-        src: "/pantautular/PantauTular - .jpg",
-        alt: "PantauTular - "
-      }
-    ] as ImageSliderContent[]
+    github: "https://github.com/ReadNow-C14"
   }
 ];
 

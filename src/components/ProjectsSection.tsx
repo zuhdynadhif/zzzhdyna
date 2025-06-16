@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Code, Award, Github } from 'lucide-react';
 import projectsData from '../data/projects';
 import ImageSlider from './ImageSlider';
@@ -16,6 +16,20 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
   neumorphismInset, 
   neumorphismButton 
 }) => {
+
+  const [isMobile, setIsMobile] = useState(false);
+
+useEffect(() => {
+  const checkMobile = () => {
+    setIsMobile(window.innerWidth < 768);
+  };
+  
+  checkMobile();
+  window.addEventListener('resize', checkMobile);
+  
+  return () => window.removeEventListener('resize', checkMobile);
+}, []);
+
   return (
     <section id="projects" className="py-20 p-8 overflow-x-hidden">
       <div className="max-w-6xl mx-auto">
@@ -33,19 +47,34 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
             const groupIndex = Math.floor(index);
             const fromLeft = index % 2 === 0;
 
-            // Jarak animasi dan ambang batas scroll
-            const threshold = 700 + groupIndex * 1000;
+            // Calculate threshold based on whether project has images
+            const baseThreshold = 700;
+            const groupSpacing = 200;
+            const imageSpacing = project.images && project.images.length > 0 ? 850 : 0;
+            
+            let threshold = baseThreshold + groupIndex * imageSpacing + groupSpacing;
+            threshold = project.images && project.images.length > 0 ? threshold : 0;
+            
+            // Adjust for projects without images
+            if (!project.images || project.images.length === 0) {
+              threshold = 400 + groupIndex * 100;
+            }
+            
+            
             const maxDistance = 150;
             let offsetX = fromLeft
-              ? Math.min(0, -(threshold - scrollY) * 0.5)
-              : Math.max(0, (threshold - scrollY) * 0.5);
+              ? Math.min(0, -(threshold - scrollY))
+              : Math.max(0, (threshold - scrollY));
 
-            // Clamp agar tidak lewat batas maxDistance
+            // Clamp to max distance
             offsetX = fromLeft
               ? Math.max(-maxDistance, offsetX)
               : Math.min(maxDistance, offsetX);
 
-            // Hitung opacity
+            if (isMobile) {
+              console.log('offsetX is ', offsetX, 'Mobile view detected, disabling horizontal animation');
+            }
+
             const opacity = scrollY > threshold - 100 ? 1 : 0;
 
             return (
@@ -54,8 +83,8 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                 className="p-8 transition-all duration-700 ease-out"
                 style={{
                   ...neumorphismStyle,
-                  transform: `translateX(${offsetX}px)`,
-                  opacity,
+                  transform: !isMobile ? `translateX(${offsetX}px)` : 'none',
+                  opacity: isMobile ? 1 : opacity,
                   maxWidth: '100%'
                 }}
               >

@@ -80,7 +80,7 @@ const ExperienceSection: React.FC<ExperienceSectionProps> = ({
             style={neumorphismStyle}
           >
             <Users size={48} className="text-blue-600 mx-auto mb-4" />
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">Organizational Experience</h2>
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">Experience</h2>
             <p className="text-gray-600 text-lg">Leadership and community involvement</p>
           </div>
           
@@ -92,9 +92,9 @@ const ExperienceSection: React.FC<ExperienceSectionProps> = ({
                 style={{
                   ...neumorphismStyle,
                   transform: `translateX(${index % 2 === 0 ? 
-                    Math.max(-300, (scrollY - 2800 - (index%2) * 300) * 0.2) : 
-                    Math.min(300, -(scrollY - 2800 - (index%2) * 300) * 0.2)}px)`,
-                  opacity: scrollY > 2700 + index * 150 ? 1 : 0.2
+                    Math.max(0, Math.min(300, -((scrollY - 5100) - (index) * 80) * 12)) : 
+                    Math.min(0, Math.max(-300, ((scrollY - 5100) - (index) * 80) * 12))}px)`,
+                  opacity: scrollY > 5100 + index * 80 ? 1 : 0.2
                 }}
               >
                 <div className="flex justify-between items-start mb-4">
@@ -103,7 +103,7 @@ const ExperienceSection: React.FC<ExperienceSectionProps> = ({
                     <p className="text-lg text-gray-500 font-semibold">{org.role}</p>
                   </div>
                   <div className="text-right">
-                    <span className="text-gray-600 font-semibold">{org.period}</span>
+                    <span className="text-blue-600 font-semibold">{org.period}</span>
                   </div>
                 </div>
                 <p className="text-gray-700 leading-relaxed">{org.description}</p>
