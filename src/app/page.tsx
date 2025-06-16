@@ -32,8 +32,8 @@ const Portfolio = () => {
 
   const neumorphismInset = {
     background: '#e0e5ec',
-    boxShadow: 'inset 8px 8px 16px #a3b1c6, inset -8px -8px 16px #ffffff',
-    borderRadius: '15px'
+    boxShadow: 'inset 4px 4px 8px #a3b1c6, inset -4px -4px 8px #ffffff',
+    borderRadius: '10px'
   };
 
   const neumorphismButton = {
