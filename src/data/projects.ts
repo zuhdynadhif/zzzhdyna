@@ -4,7 +4,7 @@ const projectsData: Project[] = [
   {
     id: 1,
     title: "Geospatial Data Visualization - PantauTular",
-    description: "A geospatial data visualization application that allows users to explore and analyze the spread of infectious diseases in Indonesia. Collaborated with Badan Riset dan Inovasi Nasional (BRIN) to develop this application, which features interactive maps and statistical data visualizations. Developed by Scrum methodology with a team of 7 people, responsible as developed and Scrum Master.",
+    description: "A geospatial data visualization application that allows users to explore and analyze the spread of infectious diseases in Indonesia. Collaborated with Badan Riset dan Inovasi Nasional (BRIN) to develop this application, which features interactive maps and statistical data visualizations. Developed by Scrum methodology with a team of 7 people, responsible as both Developer and Scrum Master.",
     technologies: ["Next.js", "PostgreSQL", "Django", "AmCharts", "Scrum"],
     status: "Completed",
     github: "https://github.com/orgs/PPL-BRIN/repositories",

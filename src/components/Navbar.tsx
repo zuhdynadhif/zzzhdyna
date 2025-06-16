@@ -98,21 +98,21 @@ const Navbar: React.FC<NavbarProps> = ({ neumorphismStyle, neumorphismInset }) =
         {/* Desktop Menu - Floating */}
         <div className="hidden md:flex space-x-2">
           {menuItems.map((item, index) => (
-            <div
+            <Link
               key={item.label}
+              href={item.href} 
               style={{
                 ...neumorphismStyle,
                 animation: `floatIn 0.6s ease-out ${index * 0.1}s both`
               }}
-              className="px-4 py-2 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+              className="text-black hover:text-gray-600 px-4 py-2 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
             >
-              <Link 
-                href={item.href} 
-                className="text-black hover:text-gray-600 font-medium transition-colors duration-200"
+              <div
+                className="font-medium transition-colors duration-200"
               >
                 {item.label}
-              </Link>
-            </div>
+              </div>
+            </Link>
           ))}
         </div>
       </div>
