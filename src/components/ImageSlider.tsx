@@ -42,12 +42,12 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
   
   return (
     <div 
-      className="w-full max-w-3xl mx-auto my-8 px-4"
+      className="w-full max-w-4xl mx-auto my-8 px-0"
     >
       <div className="flex items-center justify-center relative">
         {/* Left preview/hint */}
         <div 
-          className="absolute left-0 transform -translate-x-1/2 w-16 h-16 cursor-pointer hidden md:block"
+          className="transform -translate-x-1/2 w-16 h-16 cursor-pointer hidden md:block"
           onClick={prevImage} style={neumorphismButton}
         >
           <div className="relative w-full h-full overflow-hidden rounded-full">
@@ -77,14 +77,14 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
             alt={images[currentIndex].alt}
             width={images[currentIndex].width || 800}
             height={images[currentIndex].height || 500}
-            className="rounded-2xl md:rounded-4xl object-contain max-w-full h-auto p-1"
+            className="rounded-2xl md:rounded-3xl object-contain max-w-full h-auto p-1"
             priority
           />
         </div>
         
         {/* Right preview/hint */}
         <div 
-          className="absolute right-0 transform translate-x-1/2 w-16 h-16 cursor-pointer hidden md:block"
+          className="transform translate-x-1/2 w-16 h-16 cursor-pointer hidden md:block"
           onClick={nextImage}
         >
           <div className="relative w-full h-full overflow-hidden rounded-full">
