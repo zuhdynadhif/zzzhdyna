@@ -42,7 +42,7 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
   
   return (
     <div 
-      className="relative w-full max-w-3xl mx-auto my-8"
+      className="w-full max-w-3xl mx-auto my-8 px-4"
     >
       <div className="flex items-center justify-center relative">
         {/* Left preview/hint */}
@@ -69,21 +69,17 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
         
         {/* Main image container */}
         <div 
-          className="text-black w-full h-35 md:h-96 relative rounded-xl md:rounded-2xl overflow-hidden md:m-12"
+          className="relative aspect-[16/9] w-full max-w-3xl mx-auto"
           style={neumorphismStyle}
         >
-          <div 
-            className="transition-all duration-500 ease-in-out h-full w-full"
-          >
-            <Image
-              src={images[currentIndex].src}
-              alt={images[currentIndex].alt}
-              fill
-              className="object-cover rounded-xl md:rounded-3xl p-3"
-              sizes="(max-width: 768px) 100vw, 800px"
-              priority
-            />
-          </div>
+          <Image
+            src={images[currentIndex].src}
+            alt={images[currentIndex].alt}
+            width={images[currentIndex].width || 800}
+            height={images[currentIndex].height || 500}
+            className="rounded-2xl md:rounded-4xl object-contain max-w-full h-auto p-1"
+            priority
+          />
         </div>
         
         {/* Right preview/hint */}

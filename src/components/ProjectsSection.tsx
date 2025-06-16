@@ -31,7 +31,7 @@ useEffect(() => {
 }, []);
 
   return (
-    <section id="projects" className="py-20 p-8 overflow-x-hidden">
+    <section id="projects" className="py-20 p-4 overflow-x-hidden">
       <div className="max-w-6xl mx-auto">
         <div 
           className="text-center mb-16 p-8"
@@ -142,7 +142,7 @@ useEffect(() => {
                   )}
                 </div>
 
-                <div className="mt-auto p-2">
+                <div className="mt-auto p-0">
                   {project.images && project.images.length > 0 && (
                     <ImageSlider
                       images={project.images} 

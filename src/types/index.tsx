@@ -53,6 +53,8 @@ interface Competition {
 interface ImageSliderContent {
   src: string;
   alt: string;
+  width?: number;
+  height?: number;
 }
 
 export type {
