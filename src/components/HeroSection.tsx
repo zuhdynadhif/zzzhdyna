@@ -29,13 +29,13 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollY, neumorphismStyle, ne
             className="object-cover rounded-lg"
           />
         </div>        
-        <h1 className="text-5xl font-bold text-gray-500 mb-4">
+        <h1 className="text-xl md:text-5xl font-bold text-gray-500 mb-4">
           Hi, I&apos;m <span className="text-black">Zuhdy Nadhif <span className='text-fuchsia-900'>Ayyasy</span></span>
         </h1>
-        <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+        <p className="text-base md:text-xl text-gray-600 mb-8 leading-relaxed">
           Computer Science Student | Awardee BSI Scholarship | Free Palestine 𓂆🍉
         </p>
-        <p className="text-lg text-gray-700 mb-12 max-w-2xl mx-auto">
+        <p className="text-lg md:text-xl text-gray-700 mb-12 max-w-2xl mx-auto">
           Passionate about creating innovative solutions through code. Currently pursuing my degree 
           while building real-world applications and contributing to the tech community.
         </p>
