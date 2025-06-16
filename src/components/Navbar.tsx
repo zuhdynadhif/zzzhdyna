@@ -59,7 +59,7 @@ const Navbar: React.FC<NavbarProps> = ({ neumorphismStyle, neumorphismInset }) =
     >
       <div className="container mx-auto flex justify-between items-center">
         <div className="text-2xl font-bold text-black">
-          <Link href="/">ZuhdyNA</Link>
+          <Link href="/">zzzhdyna</Link>
         </div>
         
         {/* Hamburger Menu for mobile */}
