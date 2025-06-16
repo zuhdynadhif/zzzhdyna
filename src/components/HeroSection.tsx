@@ -12,7 +12,7 @@ interface HeroSectionProps {
 const HeroSection: React.FC<HeroSectionProps> = ({ scrollY, neumorphismStyle, neumorphismButton }) => {  return (
     <section
       id="intro"
-      className="h-screen flex justify-center p-4 md:p-8 w-full overflow-x-hidden box-border"
+      className="h-screen flex justify-center p-4 md:p-8 w-full overflow-x-hidden box-border pb-20"
     >
       <div
         id="intro-card"
@@ -23,14 +23,14 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollY, neumorphismStyle, ne
         }}
       >
         <div 
-          className="w-32 h-32 mx-auto mb-8 flex items-center justify-center overflow-hidden"
+          className="w-48 h-48 mx-auto mb-8 flex items-center justify-center overflow-hidden"
           style={neumorphismButton}
         >
           <Image 
             src="/IMG_9735_edited.jpg" 
             alt="Profile picture" 
-            width={115} 
-            height={115} 
+            width={175} 
+            height={175} 
             className="object-cover rounded-lg"
           />
         </div>        
@@ -62,7 +62,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollY, neumorphismStyle, ne
             </a>
           ))}
         </div>
-        <div className="mt-3 md:mt-12 animate-bounce">
+        <div className="mt-30 md:mt-12 animate-bounce">
           <ChevronDown size={32} className="text-gray-500 mx-auto" />
         </div>
       </div>
