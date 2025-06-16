@@ -53,7 +53,7 @@ const Navbar: React.FC<NavbarProps> = ({ neumorphismStyle, neumorphismInset }) =
         transform: isVisible ? 'translateY(0)' : 'translateY(-100%)',
         transition: 'transform 0.3s ease-in-out',
         backdropFilter: 'blur(10px)',
-        backgroundColor: '#f0f0f3'
+        backgroundColor: '#e0e5ec'
       }} 
       className="p-4 shadow-lg"
     >
@@ -125,7 +125,7 @@ const Navbar: React.FC<NavbarProps> = ({ neumorphismStyle, neumorphismInset }) =
             style={{
               ...neumorphismStyle,
               backdropFilter: 'blur(20px)',
-              backgroundColor: '#f0f0f3'
+              backgroundColor: '#e0e5ec'
             }}
             className="fixed top-20 left-4 right-4 rounded-xl p-6 shadow-2xl z-[1001] md:hidden"
             onClick={(e) => e.stopPropagation()}
