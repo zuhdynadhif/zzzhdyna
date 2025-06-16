@@ -12,12 +12,13 @@ interface HeroSectionProps {
 const HeroSection: React.FC<HeroSectionProps> = ({ scrollY, neumorphismStyle, neumorphismButton }) => {  return (
     <section id="intro" className="min-h-screen flex items-center justify-center p-8 w-full overflow-x-hidden">
       <div 
-        className="max-w-4xl mx-auto text-center p-12 transform transition-all duration-500 w-full"
+        className="max-w-4xl mx-auto text-center p-6 md:p-12 transform transition-all duration-500 w-full"
         style={{
           ...neumorphismStyle,
           transform: `translateY(${scrollY * 0.1}px) scale(${1 - scrollY * 0.0001})`
         }}
-      >        <div 
+      >        
+        <div 
           className="w-32 h-32 mx-auto mb-8 flex items-center justify-center overflow-hidden"
           style={neumorphismButton}
         >
@@ -29,35 +30,35 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollY, neumorphismStyle, ne
             className="object-cover rounded-lg"
           />
         </div>        
-        <h1 className="text-xl md:text-5xl font-bold text-gray-500 mb-4">
+        <h1 className="text-xl md:text-5xl font-bold text-gray-500 mb-2 md:mb-4">
           Hi, I&apos;m <span className="text-black">Zuhdy Nadhif <span className='text-fuchsia-900'>Ayyasy</span></span>
         </h1>
-        <p className="text-base md:text-xl text-gray-600 mb-8 leading-relaxed">
+        <p className="text-base md:text-xl text-gray-600 mb-4 md:mb-8 leading-relaxed">
           Computer Science Student | Awardee BSI Scholarship | Free Palestine 𓂆🍉
         </p>
-        <p className="text-lg md:text-xl text-gray-700 mb-12 max-w-2xl mx-auto">
+        <p className="text-sm md:text-xl text-gray-700 mb-6 md:mb-12 max-w-2xl mx-auto">
           Passionate about creating innovative solutions through code. Currently pursuing my degree 
           while building real-world applications and contributing to the tech community.
         </p>
-        <div className="flex justify-center space-x-4 max-w-md mx-auto">
-        {[
-          { icon: Github, href: "https://github.com/zuhdynadhif", label: "GitHub" },
-          { icon: Linkedin, href: "https://www.linkedin.com/in/zuhdynadhifayyasy/", label: "LinkedIn" },
-          { icon: Mail, href: "mailto:zuhdy.nadhif.ayyasy@gmail.com", label: "Email" },
-          { icon: Instagram, href: "https://www.instagram.com/zzzhdyna/", label: "Instagram" }
-        ].map(({ icon: Icon, href, label }) => (
-          <a
-          key={label}
-          href={href}
-          className="p-3 text-gray-700 hover:text-blue-600 transition-colors"
-          style={neumorphismButton}
-          aria-label={label}
-          >
-          <Icon size={20} />
-          </a>
-        ))}
+        <div className="flex justify-center space-x-4 max-w-md mb-6 md:mx-auto">
+          {[
+            { icon: Github, href: "https://github.com/zuhdynadhif", label: "GitHub" },
+            { icon: Linkedin, href: "https://www.linkedin.com/in/zuhdynadhifayyasy/", label: "LinkedIn" },
+            { icon: Mail, href: "mailto:zuhdy.nadhif.ayyasy@gmail.com", label: "Email" },
+            { icon: Instagram, href: "https://www.instagram.com/zzzhdyna/", label: "Instagram" }
+          ].map(({ icon: Icon, href, label }) => (
+            <a
+            key={label}
+            href={href}
+            className="p-3 text-gray-700 hover:text-blue-600 transition-colors"
+            style={neumorphismButton}
+            aria-label={label}
+            >
+            <Icon size={20} />
+            </a>
+          ))}
         </div>
-        <div className="mt-12 animate-bounce">
+        <div className="mt-3 md:mt-12 animate-bounce">
           <ChevronDown size={32} className="text-gray-500 mx-auto" />
         </div>
       </div>
