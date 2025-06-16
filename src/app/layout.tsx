@@ -12,24 +12,72 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const names_keywords = [
+  "Zuhdy Nadhif Ayyasy",
+  "Zuhdy",
+  "Nadhif",
+  "Ayyasy",
+  "Oci",
+  "Yosi"
+];
+
+const roles_keywords = [
+  "Portfolio",
+  "Computer Science",
+  "Backend Developer",
+  "Full Stack Developer",
+  "Web Developer",
+  "Web Development",
+  "Software Engineer",
+  "Software Engineering",
+  "Frontend Developer",
+  "React",
+  "Next.js",
+  "TypeScript",
+  "JavaScript",
+  "Projects",
+  "ElasticSearch",
+  "Scrapy"
+];
+
+const university_keywords = [
+  "University of Indonesia",
+  "UI",
+  "Universitas Indonesia",
+  "BSI Scholarship",
+  "Fakultas Ilmu Komputer",
+  "Fasilkom UI",
+  "Fakultas Ilmu Komputer UI",
+  "Fakultas Ilmu Komputer Universitas Indonesia",
+  "Fasilkom",
+  "Pacil",
+  "Ilmu Komputer",
+  "Computer Science",
+  "Computer Science UI",
+  "Computer Science Universitas Indonesia",
+  "Computer Science Fasilkom UI",
+  "Computer Science Fasilkom",
+  "Computer Science Fakultas Ilmu Komputer",
+  "Computer Science Fakultas Ilmu Komputer UI",
+  "Computer Science Fakultas Ilmu Komputer Universitas Indonesia",
+];
+
+const project_keywords = [
+  "PantauTular",
+  "Temanusa",
+  "Pantau Tular",
+  "Temanusa",
+];
+
 export const metadata: Metadata = {
   title: "Zzzhdyna | Web Portfolio",
   description:
     "Explore the portfolio of Zuhdy Nadhif Ayyasy, a passionate Computer Science student and BSI Scholarship awardee, showcasing innovative web development projects and a commitment to the tech community. Free Palestine 𓂆🍉",
   keywords: [
-    "Zuhdy Nadhif Ayyasy",
-    "Portfolio",
-    "Web Developer",
-    "Computer Science",
-    "Frontend Developer",
-    "React",
-    "Next.js",
-    "TypeScript",
-    "JavaScript",
-    "Projects",
-    "BSI Scholarship",
-    "Web Development",
-    "Software Engineer",
+    ...names_keywords,
+    ...roles_keywords,
+    ...university_keywords,
+    ...project_keywords,
   ],
   authors: [
     {
@@ -42,9 +90,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://zzzhdyna.com",
-    title: "Zuhdy Nadhif Ayyasy - Web Developer Portfolio",
+    title: "Zuhdy Nadhif Ayyasy - Computer Science Portfolio",
     description:
-      "Explore the portfolio of Zuhdy Nadhif Ayyasy, showcasing web development projects and skills.",
+      "Explore the portfolio of Zuhdy Nadhif Ayyasy, showcasing computer science projects and skills.",
     siteName: "Zuhdy Nadhif Ayyasy Portfolio",
     images: [
       {
@@ -57,7 +105,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Zuhdy Nadhif Ayyasy - Web Developer Portfolio",
+    title: "Zuhdy Nadhif Ayyasy - Computer Science Portfolio",
     description:
       "Explore the portfolio of Zuhdy Nadhif Ayyasy, showcasing web development projects and skills.",
     creator: "@zzzhdyna",
