@@ -7,7 +7,7 @@ const organizationData: Organization[] = [
     name: "Teaching Assistant of Data Structures and Algorithms",
     role: "Lembaga Asisten Fasilkom UI",
     type: "Professional",
-    period: "2022 - 2023",
+    period: "Aug 2024 - Jan 2025",
     description: "Collaborated with team of three to deliver programming assignments and two mini-projects for various concepts from basic data structures to dynamic programming. Assisted students in understanding complex algorithms and data structures, enhancing their problem-solving skills."
   },
   {

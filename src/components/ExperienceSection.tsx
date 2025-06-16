@@ -58,14 +58,12 @@ const ExperienceSection: React.FC<ExperienceSectionProps> = ({
                 >
                   <div className="flex justify-between items-start mb-4">
                     <div>
-                      <h3 className="text-xl font-bold text-gray-800">{org.name}</h3>
-                      <p className="text-lg text-gray-500 font-semibold">{org.role}</p>
-                    </div>
-                    <div className="text-right">
-                      <span className="text-gray-600 font-semibold">{org.period}</span>
+                      <h3 className="text-base md:text-xl font-bold text-gray-800">{org.name}</h3>
+                      <p className="text-sm md:text-lg text-gray-500 font-semibold">{org.role}</p>
+                      <span className="text-xs md:text-base text-gray-600 font-semibold">{org.period}</span>
                     </div>
                   </div>
-                  <p className="text-gray-700 leading-relaxed">{org.description}</p>
+                  <p className="text-sm md:text-base text-gray-700 leading-relaxed">{org.description}</p>
                 </div>
               );
             })}

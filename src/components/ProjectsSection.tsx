@@ -59,8 +59,8 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                 }}
               >
                 <div className="flex justify-between items-start mb-4">
-                  <h3 className="text-xl font-bold text-gray-800">{project.title}</h3>
-                  <span className={`px-3 py-1 rounded-full text-sm font-semibold ${
+                  <h3 className="text-base md:text-xl font-bold text-gray-800">{project.title}</h3>
+                  <span className={`px-3 py-1 rounded-full text-xs md:text-sm font-semibold ${
                     project.status === 'Completed' ? 'bg-green-100 text-green-800' :
                     project.status === 'In Progress' ? 'bg-yellow-100 text-yellow-800' :
                     'bg-blue-100 text-blue-800'
@@ -69,7 +69,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                   </span>
                 </div>
 
-                <p className="text-gray-700 mb-6 leading-relaxed">{project.description}</p>
+                <p className="text-sm md:text-base text-gray-700 mb-6 leading-relaxed">{project.description}</p>
 
                 <div className="mb-6">
                   <h4 className="text-sm font-semibold text-gray-600 mb-3">Technologies Used:</h4>

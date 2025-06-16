@@ -35,12 +35,12 @@ const EducationSection: React.FC<EducationSectionProps> = ({ scrollY, neumorphis
               }}
             >
               <div className="flex justify-between items-start mb-4">
-                <h3 className="text-2xl font-bold text-gray-800">{edu.institution}</h3>
+                <h3 className="text-xl md:text-2xl font-bold text-gray-800">{edu.institution}</h3>
                 <span className="text-blue-600 font-semibold">{edu.period}</span>
               </div>
-              <p className="text-xl text-gray-700 mb-2">{edu.degree}</p>
-              <p className="text-gray-600 mb-2">{edu.location}</p>
-              {edu.gpa && <p className="text-gray-700 font-semibold">GPA: {edu.gpa}</p>}
+              <p className="text-base md:text-xl text-gray-700 mb-2">{edu.degree}</p>
+              <p className="text-sm md:text-base text-gray-600 mb-2">{edu.location}</p>
+              {edu.gpa && <p className="text-sm md:text-base text-gray-700 font-semibold">GPA: {edu.gpa}</p>}
             </div>
           ))}
         </div>

@@ -50,12 +50,12 @@ const CoursesSection: React.FC<CoursesSectionProps> = ({ scrollY, neumorphismSty
                 }}
               >
               <div className="flex justify-between items-start mb-3">
-                <h3 className="text-lg font-bold text-gray-800">{course.name}</h3>
-                <span className="text-sm text-blue-600 font-semibold">{course.year}</span>
+                <h3 className="text-lg md:text-2lg font-bold text-gray-800">{course.name}</h3>
+                <span className="text-xs md:text-base text-blue-600 font-semibold">{course.year}</span>
               </div>
-              <p className="text-gray-600 mb-2">{course.provider}</p>
+              <p className="text-sm md:text-base text-gray-600 mb-2">{course.provider}</p>
               <span 
-                className="inline-block text-black px-3 py-1 text-sm rounded-full"
+                className="inline-block text-black px-3 py-1 text-xs md:text-sm rounded-full"
                 style={neumorphismInset}
               >
                 {course.category}
