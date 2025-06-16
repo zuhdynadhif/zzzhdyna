@@ -20,8 +20,8 @@ const CompetitionSection: React.FC<CompetitionSectionProps> = ({
           style={neumorphismStyle}
         >
           <Trophy size={48} className="text-yellow-600 mx-auto mb-4" />
-          <h2 className="text-4xl font-bold text-gray-800 mb-4">Competition Experience</h2>
-          <p className="text-gray-600 text-lg">Achievements and recognitions</p>
+          <h2 className="text-2xl md:text-4xl font-bold text-gray-800 mb-4">Competition Experience</h2>
+          <p className="text-gray-600 text-base md:text-lg">Achievements and recognitions</p>
         </div>
         
         <div className="grid md:grid-cols-2 gap-8">

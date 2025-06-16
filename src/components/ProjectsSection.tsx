@@ -23,8 +23,8 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
           style={neumorphismStyle}
         >
           <Code size={48} className="text-purple-600 mx-auto mb-4" />
-          <h2 className="text-4xl font-bold text-gray-800 mb-4">Projects</h2>
-          <p className="text-gray-600 text-lg">Showcasing my technical skills through real-world applications</p>
+          <h2 className="text-2xl md:text-4xl font-bold text-gray-800 mb-4">Projects</h2>
+          <p className="text-gray-600 text-base md:text-lg">Showcasing my technical skills through real-world applications</p>
         </div>
         
         <div className="grid lg:grid-cols-2 gap-8">

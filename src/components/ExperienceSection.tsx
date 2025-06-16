@@ -22,8 +22,8 @@ const ExperienceSection: React.FC<ExperienceSectionProps> = ({
             style={neumorphismStyle}
           >
             <Users size={48} className="text-blue-600 mx-auto mb-4" />
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">Experiences</h2>
-            <p className="text-gray-600 text-lg">Professional, Leadership, and Community Involvement</p>
+            <h2 className="text-2xl md:text-4xl font-bold text-gray-800 mb-4">Experiences</h2>
+            <p className="text-gray-600 text-base md:text-lg">Professional, Leadership, and Community Involvement</p>
           </div>
           
           <div className="space-y-8">
