@@ -15,7 +15,7 @@ const ExperienceSection: React.FC<ExperienceSectionProps> = ({
 }) => {
   if (isMobile) {
     return (
-      <section id="experience" className="py-20 p-8">
+      <section id="experience" className="py-20 p-4">
         <div className="max-w-6xl mx-auto">
           <div 
             className="text-center mb-16 p-8"
@@ -73,7 +73,7 @@ const ExperienceSection: React.FC<ExperienceSectionProps> = ({
     );
   } else {
     return (
-      <section id="experience" className="py-20 p-8">
+      <section id="experience" className="py-20 p-4">
         <div className="max-w-6xl mx-auto">
           <div 
             className="text-center mb-16 p-8"

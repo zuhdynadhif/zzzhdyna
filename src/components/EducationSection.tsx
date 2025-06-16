@@ -9,7 +9,7 @@ interface EducationSectionProps {
 
 const EducationSection: React.FC<EducationSectionProps> = ({ scrollY, neumorphismStyle }) => {
   return (
-    <section id="education" className="py-20 p-8 overflow-x-hidden">
+    <section id="education" className="py-20 p-4 overflow-x-hidden">
       <div className="max-w-6xl mx-auto">
         <div 
           className="text-center mb-16 p-8"

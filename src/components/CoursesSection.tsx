@@ -9,7 +9,7 @@ interface CoursesSectionProps {
 }
 
 const CoursesSection: React.FC<CoursesSectionProps> = ({ scrollY, neumorphismStyle, neumorphismInset }) => {  return (
-    <section id="courses" className="py-20 p-8">
+    <section id="courses" className="py-20 p-4">
       <div className="max-w-6xl mx-auto">
         <div 
           className="text-center mb-16 p-8"
