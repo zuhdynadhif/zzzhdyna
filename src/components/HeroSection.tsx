@@ -10,14 +10,18 @@ interface HeroSectionProps {
 }
 
 const HeroSection: React.FC<HeroSectionProps> = ({ scrollY, neumorphismStyle, neumorphismButton }) => {  return (
-    <section id="intro" className="min-h-screen flex items-center justify-center p-4 md:p-8 w-full overflow-x-hidden">
-      <div 
-        className="max-w-4xl mx-auto text-center p-6 md:p-12 transform transition-all duration-500 w-full"
+    <section
+      id="intro"
+      className="h-screen flex justify-center p-4 md:p-8 w-full overflow-x-hidden box-border"
+    >
+      <div
+        id="intro-card"
+        className="h-full w-full max-w-4xl mx-auto text-center flex flex-col justify-center items-center p-6 pb-20 md:p-12 transform transition-all duration-500"
         style={{
           ...neumorphismStyle,
           transform: `translateY(${-scrollY * 0.1}px) scale(${1 - scrollY * 0.0001})`
         }}
-      >        
+      >
         <div 
           className="w-32 h-32 mx-auto mb-8 flex items-center justify-center overflow-hidden"
           style={neumorphismButton}
@@ -48,13 +52,13 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollY, neumorphismStyle, ne
             { icon: Instagram, href: "https://www.instagram.com/zzzhdyna/", label: "Instagram" }
           ].map(({ icon: Icon, href, label }) => (
             <a
-            key={label}
-            href={href}
-            className="p-3 text-gray-700 hover:text-blue-600 transition-colors"
-            style={neumorphismButton}
-            aria-label={label}
+              key={label}
+              href={href}
+              className="p-3 text-gray-700 hover:text-blue-600 transition-colors"
+              style={neumorphismButton}
+              aria-label={label}
             >
-            <Icon size={20} />
+              <Icon size={20} />
             </a>
           ))}
         </div>
