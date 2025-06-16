@@ -22,17 +22,16 @@ const ExperienceSection: React.FC<ExperienceSectionProps> = ({
             style={neumorphismStyle}
           >
             <Users size={48} className="text-blue-600 mx-auto mb-4" />
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">Organizational Experience</h2>
-            <p className="text-gray-600 text-lg">Leadership and community involvement</p>
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">Experiences</h2>
+            <p className="text-gray-600 text-lg">Professional, Leadership, and Community Involvement</p>
           </div>
           
           <div className="space-y-8">
             {organizationData.map((org, index) => {
-              const groupIndex = Math.floor(index / 2);
               const fromLeft = index % 2 === 0;
 
               // Jarak animasi dan ambang batas scroll
-              const threshold = 700 + groupIndex * 430;
+              const threshold = 50 + index * 150;
               const maxDistance = 150;            // Hitung offset X
               let offsetX = fromLeft
                 ? Math.min(0, -(threshold - scrollY) * 0.5)
@@ -44,7 +43,7 @@ const ExperienceSection: React.FC<ExperienceSectionProps> = ({
                 : Math.min(maxDistance, offsetX);
 
               // Hitung opacity
-              const opacity = scrollY > threshold - 100 ? 1 : 0;
+              const opacity = scrollY > threshold - 100 ? 1 : 0.3;
 
               return (
                 <div
