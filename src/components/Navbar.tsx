@@ -66,7 +66,7 @@ const Navbar: React.FC<NavbarProps> = ({ neumorphismStyle, neumorphismInset }) =
     { href: "#education", label: "Education" },
     { href: "#experience", label: "Experience" },
     { href: "#courses", label: "Courses" },
-    { href: "#contact", label: "Contact" },
+    { href: "#footer", label: "Contact" },
   ];  return (    <nav 
       className={`fixed w-full z-50 transition-all duration-300 py-4 px-6 ${
         (isVisible || isOpen) ? 'shadow-lg bg-white bg-opacity-80 backdrop-blur-sm top-0' : 'top-[-100px]'

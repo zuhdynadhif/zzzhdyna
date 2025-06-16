@@ -10,12 +10,12 @@ interface HeroSectionProps {
 }
 
 const HeroSection: React.FC<HeroSectionProps> = ({ scrollY, neumorphismStyle, neumorphismButton }) => {  return (
-    <section id="intro" className="min-h-screen flex items-center justify-center p-8 w-full overflow-x-hidden">
+    <section id="intro" className="min-h-screen flex items-center justify-center p-4 md:p-8 w-full overflow-x-hidden">
       <div 
         className="max-w-4xl mx-auto text-center p-6 md:p-12 transform transition-all duration-500 w-full"
         style={{
           ...neumorphismStyle,
-          transform: `translateY(${scrollY * 0.1}px) scale(${1 - scrollY * 0.0001})`
+          transform: `translateY(${-scrollY * 0.1}px) scale(${1 - scrollY * 0.0001})`
         }}
       >        
         <div 

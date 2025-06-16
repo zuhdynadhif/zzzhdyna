@@ -8,7 +8,7 @@ interface FooterProps {
 
 const Footer: React.FC<FooterProps> = ({ neumorphismStyle, neumorphismButton }) => {
   return (
-    <footer className="md:py-16 p-8">
+    <footer id="footer" className="md:py-16 p-8">
       <div className="max-w-6xl mx-auto text-center">
         <div 
           className="p-8 mb-8"
