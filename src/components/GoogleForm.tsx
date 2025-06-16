@@ -23,11 +23,6 @@ const GoogleForm: React.FC<GoogleFormProps> = ({ neumorphismButton, neumorphismI
       }
     };
   }, []);
-
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setMessage(event.target.value);
-  };
-
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
@@ -77,29 +72,29 @@ const GoogleForm: React.FC<GoogleFormProps> = ({ neumorphismButton, neumorphismI
       setIsSubmitting(false);
     }
   };
-
   return (
     <form onSubmit={handleSubmit} className="mt-3 w-full max-w-md mx-auto">
       <div className="relative">
-        <input
-          type="text"
+        <textarea
           placeholder="Text Me Anything (Anonymous)"
-          className="w-full p-4 pr-16 text-gray-700 border rounded-lg focus:outline-none focus:shadow-outline"
+          className="w-full p-4 pr-16 text-xs text-gray-700 border rounded-lg focus:outline-none focus:shadow-outline"
           style={{
             backgroundImage: "url('/anonymous.png')",
             backgroundSize: '30px 30px',
             backgroundRepeat: 'no-repeat',
-            backgroundPosition: 'right 10px center',
-            paddingRight: '50px'
+            backgroundPosition: 'right 10px top 10px',
+            paddingRight: '50px',
+            minHeight: '120px', // Make the textarea larger
+            resize: 'vertical'  // Allow user to resize vertically
           }}
           value={message}
-          onChange={handleChange}
+          onChange={(e) => setMessage(e.target.value)}
           required
         />
       </div>
       <button
         type="submit"
-        className="mt-4 w-full p-3 text-gray-800 rounded-lg hover:bg-blue-600 transition-colors" // Removed bg-blue-500 as style will handle it
+        className="mt-4 w-full p-3 text-xs text-gray-800 rounded-lg hover:bg-blue-600 transition-colors" // Reduced text size to xs
         style={isSubmitting || cooldownActive ? neumorphismInset : neumorphismButton} // Conditional style
         disabled={isSubmitting || cooldownActive}
       >
