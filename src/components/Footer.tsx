@@ -18,24 +18,24 @@ const Footer: React.FC<FooterProps> = ({ neumorphismStyle, neumorphismButton }) 
           <p className="text-gray-600 mb-6">
             I&apos;m always interested in new opportunities and collaborations.
           </p>
-            <div className="flex justify-center space-x-4 max-w-md mx-auto">
-            {[
-              { icon: Github, href: "https://github.com/zuhdynadhif", label: "GitHub" },
-              { icon: Linkedin, href: "https://www.linkedin.com/in/zuhdynadhifayyasy/", label: "LinkedIn" },
-              { icon: Mail, href: "mailto:zuhdy.nadhif.ayyasy@gmail.com", label: "Email" },
-              { icon: Instagram, href: "https://www.instagram.com/zzzhdyna/", label: "Instagram" }
-            ].map(({ icon: Icon, href, label }) => (
-              <a
-              key={label}
-              href={href}
-              className="p-3 text-gray-700 hover:text-blue-600 transition-colors"
-              style={neumorphismButton}
-              aria-label={label}
-              >
-              <Icon size={20} />
-              </a>
-            ))}
-            </div>
+          <div className="flex justify-center space-x-4 max-w-md mx-auto">
+          {[
+            { icon: Github, href: "https://github.com/zuhdynadhif", label: "GitHub" },
+            { icon: Linkedin, href: "https://www.linkedin.com/in/zuhdynadhifayyasy/", label: "LinkedIn" },
+            { icon: Mail, href: "mailto:zuhdy.nadhif.ayyasy@gmail.com", label: "Email" },
+            { icon: Instagram, href: "https://www.instagram.com/zzzhdyna/", label: "Instagram" }
+          ].map(({ icon: Icon, href, label }) => (
+            <a
+            key={label}
+            href={href}
+            className="p-3 text-gray-700 hover:text-blue-600 transition-colors"
+            style={neumorphismButton}
+            aria-label={label}
+            >
+            <Icon size={20} />
+            </a>
+          ))}
+          </div>
         </div>
         <div className="flex items-center justify-center text-gray-600">
           <span>Made with</span>
