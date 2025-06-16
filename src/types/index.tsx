@@ -24,6 +24,7 @@ interface Project {
   status: 'Planning' | 'Completed' | 'In Progress' | 'Planned';
   github?: string;
   demo?: string;
+  images?: ImageSliderContent[];
 }
 
 interface TechStack {
@@ -49,11 +50,17 @@ interface Competition {
   organizer: string;
 }
 
+interface ImageSliderContent {
+  src: string;
+  alt: string;
+}
+
 export type {
   Education,
   Course,
   Project,
   TechStack,
   Experience as Organization,
-  Competition
+  Competition,
+  ImageSliderContent
 };

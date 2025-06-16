@@ -1,6 +1,7 @@
 import React from 'react';
 import { Code, Award, Github } from 'lucide-react';
 import projectsData from '../data/projects';
+import ImageSlider from './ImageSlider';
 
 interface ProjectsSectionProps {
   scrollY: number;
@@ -27,14 +28,14 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
           <p className="text-gray-600 text-base md:text-lg">Showcasing my technical skills through real-world applications</p>
         </div>
         
-        <div className="grid lg:grid-cols-2 gap-8">
+        <div className="grid lg:grid-cols-1 gap-8">
           {projectsData.map((project, index) => {
-            const groupIndex = Math.floor(index / 2);
+            const groupIndex = Math.floor(index);
             const fromLeft = index % 2 === 0;
 
             // Jarak animasi dan ambang batas scroll
-            const threshold = 700 + groupIndex * 430;
-            const maxDistance = 150;            // Hitung offset X
+            const threshold = 700 + groupIndex * 1000;
+            const maxDistance = 150;
             let offsetX = fromLeft
               ? Math.min(0, -(threshold - scrollY) * 0.5)
               : Math.max(0, (threshold - scrollY) * 0.5);
@@ -109,6 +110,17 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                       <Award size={18} className="mr-2" />
                       Demo
                     </a>
+                  )}
+                </div>
+
+                <div className="mt-auto p-2">
+                  {project.images && project.images.length > 0 && (
+                    <ImageSlider
+                      images={project.images} 
+                      neumorphismStyle={neumorphismStyle}
+                      neumorphismInset={neumorphismInset}
+                      neumorphismButton={neumorphismButton}
+                    />
                   )}
                 </div>
               </div>
