@@ -21,8 +21,8 @@ const TechStackSection: React.FC<TechStackSectionProps> = ({
           style={neumorphismStyle}
         >
           <Award size={48} className="text-red-600 mx-auto mb-4" />
-          <h2 className="text-2xl md:text-4xl font-bold text-gray-800 mb-4">Tech Stack</h2>
-          <p className="text-gray-600 text-base md:text-lg">Technologies and tools I work with</p>
+          <h2 className="text-2xl md:text-4xl font-bold mb-4">Tech Stack</h2>
+          <p className="text-base md:text-lg">Technologies and tools I work with</p>
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -36,12 +36,12 @@ const TechStackSection: React.FC<TechStackSectionProps> = ({
                 opacity: scrollY > 2100 + index * 50 ? 1 : 0.3
               }}
             >
-              <h3 className="text-lg font-bold text-gray-800 mb-4">{category.category}</h3>
+              <h3 className="text-lg font-bold mb-4">{category.category}</h3>
               <div className="space-y-3">
                 {category.technologies.map((tech) => (
                   <div
                     key={tech}
-                    className="p-3 text-center text-gray-700 font-medium"
+                    className="p-3 text-center font-medium"
                     style={neumorphismInset}
                   >
                     {tech}
