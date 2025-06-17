@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { useTheme } from '../context/ThemeContext';
 
 interface LayoutProps {
   children: ReactNode;
@@ -8,6 +9,7 @@ interface LayoutProps {
 }
 
 const Layout: React.FC<LayoutProps> = ({ children, title = 'Zuhdy Nadhif Ayyasy' }) => {
+  const { hoverColors } = useTheme();
   return (
     <>
       <Head>
@@ -22,15 +24,29 @@ const Layout: React.FC<LayoutProps> = ({ children, title = 'Zuhdy Nadhif Ayyasy'
           <Link href="/" className="text-xl font-bold text-gray-800">
             ZuhdyNA
           </Link>
-          
           <div className="flex space-x-4">
-            <Link href="/" className="text-gray-600 hover:text-black">
+            <Link 
+              href="/" 
+              className="text-gray-600 transition-colors"
+              onMouseEnter={(e) => e.currentTarget.style.color = hoverColors.link}
+              onMouseLeave={(e) => e.currentTarget.style.color = ''}
+            >
               Home
             </Link>
-            <Link href="/gallery" className="text-gray-600 hover:text-black">
+            <Link 
+              href="/gallery" 
+              className="text-gray-600 transition-colors"
+              onMouseEnter={(e) => e.currentTarget.style.color = hoverColors.link}
+              onMouseLeave={(e) => e.currentTarget.style.color = ''}
+            >
               Gallery
             </Link>
-            <Link href="#contact" className="text-gray-600 hover:text-black">
+            <Link 
+              href="#contact" 
+              className="text-gray-600 transition-colors"
+              onMouseEnter={(e) => e.currentTarget.style.color = hoverColors.link}
+              onMouseLeave={(e) => e.currentTarget.style.color = ''}
+            >
               Contact
             </Link>
           </div>

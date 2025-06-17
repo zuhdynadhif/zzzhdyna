@@ -1,6 +1,7 @@
 import React from 'react';
 import { Heart, Github, Linkedin, Mail, Instagram } from 'lucide-react';
 import GoogleForm from './GoogleForm';
+import { useTheme } from '../context/ThemeContext';
 
 interface FooterProps {
   neumorphismStyle: React.CSSProperties;
@@ -9,6 +10,7 @@ interface FooterProps {
 }
 
 const Footer: React.FC<FooterProps> = ({ neumorphismStyle, neumorphismButton, neumorphismInset }) => {
+  const { hoverColors } = useTheme();
   return (
     <footer id="footer" className="md:py-16 p-4">
       <div className="max-w-6xl mx-auto text-center">
@@ -21,7 +23,7 @@ const Footer: React.FC<FooterProps> = ({ neumorphismStyle, neumorphismButton, ne
             I&apos;m always interested in new opportunities and collaborations.
           </p>
           <div className="flex justify-center space-x-4 max-w-md mx-auto">
-          {[
+            {[
             { icon: Github, href: "https://github.com/zuhdynadhif", label: "GitHub" },
             { icon: Linkedin, href: "https://www.linkedin.com/in/zuhdynadhifayyasy/", label: "LinkedIn" },
             { icon: Mail, href: "mailto:zuhdy.nadhif.ayyasy@gmail.com", label: "Email" },
@@ -30,8 +32,10 @@ const Footer: React.FC<FooterProps> = ({ neumorphismStyle, neumorphismButton, ne
             <a
             key={label}
             href={href}
-            className="p-3 hover:text-blue-600 transition-colors"
+            className="p-3 transition-colors"
             style={neumorphismButton}
+            onMouseEnter={(e) => e.currentTarget.style.color = hoverColors.link}
+            onMouseLeave={(e) => e.currentTarget.style.color = ''}
             aria-label={label}
             >
             <Icon size={20} />

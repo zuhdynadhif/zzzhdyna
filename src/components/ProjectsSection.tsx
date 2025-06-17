@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Code, Award, Github } from 'lucide-react';
 import projectsData from '../data/projects';
 import ImageSlider from './ImageSlider';
+import { useTheme } from '../context/ThemeContext';
 
 interface ProjectsSectionProps {
   scrollY: number;
@@ -16,6 +17,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
   neumorphismInset, 
   neumorphismButton 
 }) => {
+  const { hoverColors } = useTheme();
 
   const [isMobile, setIsMobile] = useState(false);
 
@@ -108,8 +110,10 @@ useEffect(() => {
                       <a
                         href={`https://www.google.com/search?q=${encodeURIComponent(tech)}`}
                         key={tech}
-                        className="px-3 py-1 text-sm font-medium hover:text-blue-600 transition-colors cursor-pointer"
+                        className="px-3 py-1 text-sm font-medium transition-colors cursor-pointer"
                         style={neumorphismInset}
+                        onMouseEnter={(e) => e.currentTarget.style.color = hoverColors.link}
+                        onMouseLeave={(e) => e.currentTarget.style.color = ''}
                         target="_blank"
                         rel="noopener noreferrer"
                       >

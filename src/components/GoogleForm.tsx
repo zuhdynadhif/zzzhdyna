@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useTheme } from '../context/ThemeContext';
 
 const GOOGLE_FORM_URL = "https://docs.google.com/forms/u/0/d/e/1FAIpQLScOz03xsxstFTqwUFwYPKj3kxLp0YguMKAGQbOPtG95mzhgcA/formResponse";
 const COOLDOWN_SECONDS = 5; // Cooldown period in seconds
@@ -9,6 +10,7 @@ interface GoogleFormProps {
 }
 
 const GoogleForm: React.FC<GoogleFormProps> = ({ neumorphismButton, neumorphismInset }) => { // Destructure neumorphismInset
+  const { hoverColors } = useTheme();
   const [message, setMessage] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [cooldownActive, setCooldownActive] = useState(false);
@@ -94,8 +96,12 @@ const GoogleForm: React.FC<GoogleFormProps> = ({ neumorphismButton, neumorphismI
       </div>
       <button
         type="submit"
-        className="mt-4 w-full p-3 text-xs rounded-lg hover:bg-blue-600 transition-colors" // Reduced text size to xs
-        style={isSubmitting || cooldownActive ? neumorphismInset : neumorphismButton} // Conditional style
+        className="mt-4 w-full p-3 text-xs rounded-lg transition-colors" // Reduced text size to xs
+        style={{
+          ...(isSubmitting || cooldownActive ? neumorphismInset : neumorphismButton)
+        }}
+        onMouseEnter={(e) => e.currentTarget.style.color = hoverColors.button}
+        onMouseLeave={(e) => e.currentTarget.style.color = ''}
         disabled={isSubmitting || cooldownActive}
       >
         {isSubmitting ? 'Sending...' : cooldownActive ? `Wait ${cooldownTimeRemaining}s` : 'Send'}

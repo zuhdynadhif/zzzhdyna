@@ -22,7 +22,7 @@ const Navbar: React.FC<NavbarProps> = ({ neumorphismStyle, neumorphismInset }) =
   const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
-  const { isDark, toggleTheme, neumorphismButton } = useTheme();
+  const { isDark, toggleTheme, neumorphismButton, hoverColors } = useTheme();
 
   const backgroundColor = isDark ? '#2d3748' : '#e0e5ec';
 
@@ -146,6 +146,8 @@ const Navbar: React.FC<NavbarProps> = ({ neumorphismStyle, neumorphismInset }) =
                 ...neumorphismStyle,
                 animation: `floatIn 0.6s ease-out ${index * 0.1}s both`,
               }}
+              onMouseEnter={(e) => e.currentTarget.style.color = hoverColors.button}
+              onMouseLeave={(e) => e.currentTarget.style.color = ''}
               className="px-4 py-2 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 cursor-pointer"
             >
               <div
@@ -184,7 +186,9 @@ const Navbar: React.FC<NavbarProps> = ({ neumorphismStyle, neumorphismInset }) =
                   >
                     <div
                       style={neumorphismInset}
-                      className="rounded-xl overflow-hidden px-6 py-4 hover:bg-gray-100 font-medium transition-all duration-200 hover:translate-x-2 cursor-pointer"
+                      className="rounded-xl overflow-hidden px-6 py-4 font-medium transition-all duration-200 hover:translate-x-2 cursor-pointer"
+                      onMouseEnter={(e) => e.currentTarget.style.color = hoverColors.button}
+                      onMouseLeave={(e) => e.currentTarget.style.color = ''}
                     >
                       {item.label}
                     </div>

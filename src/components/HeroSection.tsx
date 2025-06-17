@@ -11,7 +11,7 @@ interface HeroSectionProps {
 }
 
 const HeroSection: React.FC<HeroSectionProps> = ({ scrollY, neumorphismStyle, neumorphismButton }) => {
-  const { textColors } = useTheme();
+  const { textColors, hoverColors } = useTheme();
   
   return (
     <section
@@ -57,8 +57,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollY, neumorphismStyle, ne
           ].map(({ icon: Icon, href, label }) => (            <a
               key={label}
               href={href}
-              className="p-3 hover:text-blue-600 transition-colors"
+              className="p-3 transition-colors"
               style={neumorphismButton}
+              onMouseEnter={(e) => e.currentTarget.style.color = hoverColors.link}
+              onMouseLeave={(e) => e.currentTarget.style.color = ''}
               aria-label={label}
             >
               <Icon size={20} />
