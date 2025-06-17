@@ -14,9 +14,6 @@ const techStackData: TechStack[] = [
   {
     category: "Backend",
     technologies: [
-      "Node.js",
-      "Express",
-      "Java",
       "Spring Boot",
       "Python"
     ]
@@ -24,18 +21,13 @@ const techStackData: TechStack[] = [
   {
     category: "Database",
     technologies: [
-      "MongoDB",
       "PostgreSQL",
-      "MySQL",
-      "Firebase"
     ]
   },
   {
     category: "Mobile",
     technologies: [
       "Flutter",
-      "React Native",
-      "Android (Kotlin)"
     ]
   },
   {
@@ -43,7 +35,7 @@ const techStackData: TechStack[] = [
     technologies: [
       "Git",
       "Docker",
-      "AWS",
+      "GCP",
       "CI/CD"
     ]
   }
