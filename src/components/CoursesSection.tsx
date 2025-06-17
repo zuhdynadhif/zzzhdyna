@@ -19,8 +19,8 @@ const CoursesSection: React.FC<CoursesSectionProps> = ({ scrollY, neumorphismSty
           }}
         >
           <Code size={48} className="text-green-600 mx-auto mb-4" />
-          <h2 className="text-2xl md:text-4xl font-bold text-gray-800 mb-4">Notable Courses</h2>
-          <p className="text-gray-600 text-base md:text-lg">Key courses that shaped my technical foundation</p>
+          <h2 className="text-2xl md:text-4xl font-bold mb-4">Notable Courses</h2>
+          <p className="text-base md:text-lg">Key courses that shaped my technical foundation</p>
         </div>          
         <div className="grid md:grid-cols-2 gap-6">
           {coursesData.map((course, index) => {
@@ -50,12 +50,12 @@ const CoursesSection: React.FC<CoursesSectionProps> = ({ scrollY, neumorphismSty
                 }}
               >
               <div className="flex justify-between items-start mb-3">
-                <h3 className="text-lg md:text-2lg font-bold text-gray-800">{course.name}</h3>
+                <h3 className="text-lg md:text-2lg font-bold">{course.name}</h3>
                 <span className="text-xs md:text-base text-blue-600 font-semibold">{course.year}</span>
               </div>
-              <p className="text-sm md:text-base text-gray-600 mb-2">{course.provider}</p>
+              <p className="text-sm md:text-base mb-2">{course.provider}</p>
               <span 
-                className="inline-block text-black px-3 py-1 text-xs md:text-sm rounded-full"
+                className="inline-block px-3 py-1 text-xs md:text-sm rounded-full"
                 style={neumorphismInset}
               >
                 {course.category}
