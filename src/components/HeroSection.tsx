@@ -37,13 +37,14 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollY, neumorphismStyle, ne
             height={175} 
             className="object-cover rounded-lg"
           />
-        </div>          <h1 className="text-xl md:text-3xl font-bold mb-2 md:mb-4" style={{ color: textColors.secondary }}>
-          Hi, I&apos;m <span style={{ color: textColors.primary }}>Zuhdy Nadhif <span className='text-fuchsia-900'>Ayyasy</span></span>
+        </div>          
+        <h1 className="text-xl md:text-3xl font-bold mb-2 md:mb-4">
+          Hi, I&apos;m <span>Zuhdy Nadhif <span  style={{ color: textColors.accent }}>Ayyasy</span></span>
         </h1>
-        <p className="text-base md:text-xl mb-4 md:mb-8 leading-relaxed" style={{ color: textColors.muted }}>
+        <p className="text-base md:text-xl mb-4 md:mb-8 leading-relaxed">
           Computer Science Student | Awardee BSI Scholarship | Free Palestine 𓂆🍉
         </p>
-        <p className="text-sm md:text-base mb-6 md:mb-8 max-w-2xl mx-auto" style={{ color: textColors.secondary }}>
+        <p className="text-sm md:text-base mb-6 md:mb-8 max-w-2xl mx-auto">
           Passionate about creating innovative solutions through code. Currently pursuing my degree 
           while building real-world applications and contributing to the tech community.
         </p>
@@ -65,7 +66,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollY, neumorphismStyle, ne
           ))}
         </div>
         <div className="mt-10 md:mt-16 animate-bounce">
-          <ChevronDown size={32} className="text-gray-500 mx-auto" />
+          <ChevronDown size={32} className="mx-auto" />
         </div>
       </div>
     </section>
