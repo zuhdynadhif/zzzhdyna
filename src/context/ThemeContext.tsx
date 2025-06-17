@@ -14,6 +14,13 @@ interface ThemeContextType {
     accent: string;
     muted: string;
   };
+  hoverColors: {
+    primary: string;
+    secondary: string;
+    accent: string;
+    button: string;
+    link: string;
+  };
 }
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
@@ -80,12 +87,19 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     borderRadius: '10px',
     border: 'none',
     transition: 'all 0.2s ease'
-  };
-  const textColors = {
+  };  const textColors = {
     primary: isDark ? '#f7fafc' : '#2d3748',
     secondary: isDark ? '#e2e8f0' : '#4a5568', 
     accent: isDark ? '#9f7aea' : '#805ad5',
     muted: isDark ? '#a0aec0' : '#718096'
+  };
+
+  const hoverColors = {
+    primary: isDark ? '#ffffff' : '#1a202c',
+    secondary: isDark ? '#f7fafc' : '#2d3748',
+    accent: isDark ? '#b794f6' : '#6b46c1',
+    button: isDark ? '#ffd700' : '#3182ce',
+    link: isDark ? '#63b3ed' : '#2b6cb0'
   };
 
   return (
@@ -95,7 +109,8 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       neumorphismStyle, 
       neumorphismInset, 
       neumorphismButton,
-      textColors
+      textColors,
+      hoverColors
     }}>
       {children}
     </ThemeContext.Provider>
