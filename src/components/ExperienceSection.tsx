@@ -22,8 +22,8 @@ const ExperienceSection: React.FC<ExperienceSectionProps> = ({
             style={neumorphismStyle}
           >
             <Users size={48} className="text-blue-600 mx-auto mb-4" />
-            <h2 className="text-2xl md:text-4xl font-bold text-gray-800 mb-4">Experiences</h2>
-            <p className="text-gray-600 text-base md:text-lg">Professional, Leadership, and Community Involvement</p>
+            <h2 className="text-2xl md:text-4xl font-bold mb-4">Experiences</h2>
+            <p className="text-base md:text-lg">Professional, Leadership, and Community Involvement</p>
           </div>
           
           <div className="space-y-8">
@@ -58,12 +58,12 @@ const ExperienceSection: React.FC<ExperienceSectionProps> = ({
                 >
                   <div className="flex justify-between items-start mb-4">
                     <div>
-                      <h3 className="text-base md:text-xl font-bold text-gray-800">{org.name}</h3>
-                      <p className="text-sm md:text-lg text-gray-500 font-semibold">{org.role}</p>
-                      <span className="text-xs md:text-base text-gray-600 font-semibold">{org.period}</span>
+                      <h3 className="text-base md:text-xl font-bold">{org.name}</h3>
+                      <p className="text-sm md:text-lg font-semibold">{org.role}</p>
+                      <span className="text-xs md:text-base font-semibold">{org.period}</span>
                     </div>
                   </div>
-                  <p className="text-sm md:text-base text-gray-700 leading-relaxed">{org.description}</p>
+                  <p className="text-sm md:text-base leading-relaxed">{org.description}</p>
                 </div>
               );
             })}
@@ -80,8 +80,8 @@ const ExperienceSection: React.FC<ExperienceSectionProps> = ({
             style={neumorphismStyle}
           >
             <Users size={48} className="text-blue-600 mx-auto mb-4" />
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">Experience</h2>
-            <p className="text-gray-600 text-lg">Leadership and community involvement</p>
+            <h2 className="text-4xl font-bold mb-4">Experience</h2>
+            <p className="text-lg">Leadership and community involvement</p>
           </div>
           
           <div className="space-y-8">
@@ -99,14 +99,14 @@ const ExperienceSection: React.FC<ExperienceSectionProps> = ({
               >
                 <div className="flex justify-between items-start mb-4">
                   <div>
-                    <h3 className="text-xl font-bold text-gray-800">{org.name}</h3>
-                    <p className="text-lg text-gray-500 font-semibold">{org.role}</p>
+                    <h3 className="text-xl font-bold">{org.name}</h3>
+                    <p className="text-lg font-semibold">{org.role}</p>
                   </div>
                   <div className="text-right">
                     <span className="text-blue-600 font-semibold">{org.period}</span>
                   </div>
                 </div>
-                <p className="text-gray-700 leading-relaxed">{org.description}</p>
+                <p className="leading-relaxed">{org.description}</p>
               </div>
             ))}
           </div>
