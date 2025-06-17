@@ -57,10 +57,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollY, neumorphismStyle, ne
               key={label}
               href={href}
               className="p-3 hover:text-blue-600 transition-colors"
-              style={{
-                ...neumorphismButton,
-                color: textColors.secondary
-              }}
+              style={neumorphismButton}
               aria-label={label}
             >
               <Icon size={20} />

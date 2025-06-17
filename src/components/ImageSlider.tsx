@@ -63,7 +63,7 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
             className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 rounded-full"
             style={neumorphismButton}
           >
-            <ChevronLeft size={40} className="text-black" />
+            <ChevronLeft size={40} />
           </div>
         </div>
         
@@ -100,7 +100,7 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
             className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 rounded-full"
             style={neumorphismButton}
           >
-            <ChevronRight size={40} className="text-black" />
+            <ChevronRight size={40} />
           </div>
         </div>
       </div>
@@ -113,7 +113,7 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
           style={neumorphismButton}
           aria-label="Previous image"
         >
-          <ChevronLeft size={20}  className="text-black"/>
+          <ChevronLeft size={20} />
         </button>
         <button 
           onClick={nextImage}
@@ -121,7 +121,7 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
           style={neumorphismButton}
           aria-label="Next image"
         >
-          <ChevronRight size={20}  className="text-black"/>
+          <ChevronRight size={20} />
         </button>
       </div>
       

@@ -70,7 +70,7 @@ const Navbar: React.FC<NavbarProps> = ({ neumorphismStyle, neumorphismInset }) =
       className="p-4 shadow-lg"
     >
       <div className="container mx-auto flex justify-between items-center">
-        <div className={`text-2xl font-bold ${isDark ? 'text-white' : 'text-black'}`}>
+        <div className={`text-2xl font-bold`}>
           <Link href="/">zzzhdyna</Link>
         </div>
         
@@ -79,7 +79,7 @@ const Navbar: React.FC<NavbarProps> = ({ neumorphismStyle, neumorphismInset }) =
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className={`${isDark ? 'text-white' : 'text-black'} focus:outline-none relative z-50`}
+              className={`focus:outline-none relative z-50`}
               aria-label="Toggle menu"
             >
               <svg
@@ -116,9 +116,9 @@ const Navbar: React.FC<NavbarProps> = ({ neumorphismStyle, neumorphismInset }) =
               onClick={() => handleSmoothScroll(item.href)}
               style={{
                 ...neumorphismStyle,
-                animation: `floatIn 0.6s ease-out ${index * 0.1}s both`
+                animation: `floatIn 0.6s ease-out ${index * 0.1}s both`,
               }}
-              className="text-black hover:text-gray-600 px-4 py-2 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 cursor-pointer"
+              className="px-4 py-2 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 cursor-pointer"
             >
               <div
                 className="font-medium transition-colors duration-200"
@@ -156,7 +156,7 @@ const Navbar: React.FC<NavbarProps> = ({ neumorphismStyle, neumorphismInset }) =
                   >
                     <div
                       style={neumorphismInset}
-                      className="rounded-xl overflow-hidden px-6 py-4 text-black hover:bg-gray-100 font-medium transition-all duration-200 hover:translate-x-2 cursor-pointer"
+                      className="rounded-xl overflow-hidden px-6 py-4 hover:bg-gray-100 font-medium transition-all duration-200 hover:translate-x-2 cursor-pointer"
                     >
                       {item.label}
                     </div>
