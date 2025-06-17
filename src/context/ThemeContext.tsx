@@ -13,6 +13,8 @@ interface ThemeContextType {
     secondary: string;
     accent: string;
     muted: string;
+    styled1: string;
+    styled2: string;
   };
   hoverColors: {
     primary: string;
@@ -20,6 +22,8 @@ interface ThemeContextType {
     accent: string;
     button: string;
     link: string;
+    styled1: string;
+    styled2: string;
   };
 }
 
@@ -91,7 +95,9 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     primary: isDark ? '#f7fafc' : '#2d3748',
     secondary: isDark ? '#e2e8f0' : '#4a5568', 
     accent: isDark ? '#9f7aea' : '#805ad5',
-    muted: isDark ? '#a0aec0' : '#718096'
+    muted: isDark ? '#a0aec0' : '#718096',
+    styled1: isDark ? '#f6ad55' : '#dd6b20',
+    styled2: isDark ? '#68d391' : '#38a169'
   };
 
   const hoverColors = {
@@ -99,7 +105,9 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     secondary: isDark ? '#f7fafc' : '#2d3748',
     accent: isDark ? '#b794f6' : '#6b46c1',
     button: isDark ? '#ffd700' : '#3182ce',
-    link: isDark ? '#63b3ed' : '#2b6cb0'
+    link: isDark ? '#63b3ed' : '#2b6cb0',
+    styled1: isDark ? '#fbd38d' : '#f6ad55',
+    styled2: isDark ? '#90cdf4' : '#63b3ed'
   };
 
   return (
