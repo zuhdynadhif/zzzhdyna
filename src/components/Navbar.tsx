@@ -80,9 +80,10 @@ const Navbar: React.FC<NavbarProps> = ({ neumorphismStyle, neumorphismInset }) =
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
 
-  return (    <nav 
+  return (    
+    <nav 
       style={{
-        ...neumorphismStyle,
+        ...neumorphismButton,
         position: 'fixed',
         top: 0,
         left: 0,
@@ -143,12 +144,12 @@ const Navbar: React.FC<NavbarProps> = ({ neumorphismStyle, neumorphismInset }) =
               key={item.label}
               onClick={() => handleSmoothScroll(item.href)}
               style={{
-                ...neumorphismStyle,
+                ...neumorphismButton,
                 animation: `floatIn 0.6s ease-out ${index * 0.1}s both`,
               }}
               onMouseEnter={(e) => e.currentTarget.style.color = hoverColors.button}
               onMouseLeave={(e) => e.currentTarget.style.color = ''}
-              className="px-4 py-2 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 cursor-pointer"
+              className="px-4 py-2 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 cursor-pointer"
             >
               <div
                 className="font-medium transition-colors duration-200"
@@ -170,7 +171,7 @@ const Navbar: React.FC<NavbarProps> = ({ neumorphismStyle, neumorphismInset }) =
               backdropFilter: 'blur(20px)',
               backgroundColor: isDark ? '#2d3748' : '#e0e5ec'
             }}
-            className="fixed top-20 left-4 right-4 rounded-xl p-6 shadow-2xl z-[1001] md:hidden"
+            className="fixed top-20 left-4 right-4 p-6 shadow-2xl z-[1001] md:hidden"
             onClick={(e) => e.stopPropagation()}
           >            <ul className="flex flex-col space-y-3">
               {menuItems.map((item, index) => (
@@ -186,7 +187,7 @@ const Navbar: React.FC<NavbarProps> = ({ neumorphismStyle, neumorphismInset }) =
                   >
                     <div
                       style={neumorphismInset}
-                      className="rounded-xl overflow-hidden px-6 py-4 font-medium transition-all duration-200 hover:translate-x-2 cursor-pointer"
+                      className="overflow-hidden px-6 py-4 font-medium transition-all duration-200 hover:translate-x-2 cursor-pointer"
                       onMouseEnter={(e) => e.currentTarget.style.color = hoverColors.button}
                       onMouseLeave={(e) => e.currentTarget.style.color = ''}
                     >
