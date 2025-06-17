@@ -22,7 +22,7 @@ const Navbar: React.FC<NavbarProps> = ({ neumorphismStyle, neumorphismInset }) =
   const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
-  const { isDark, toggleTheme, neumorphismButton, textColors } = useTheme();
+  const { isDark, toggleTheme, neumorphismButton } = useTheme();
 
   const backgroundColor = isDark ? '#2d3748' : '#e0e5ec';
 
@@ -40,12 +40,10 @@ const Navbar: React.FC<NavbarProps> = ({ neumorphismStyle, neumorphismInset }) =
       {isDark ? (
         <Sun 
           className="w-5 h-5 transition-colors duration-200" 
-          style={{ color: textColors.primary }}
         />
       ) : (
         <Moon 
           className="w-5 h-5 transition-colors duration-200" 
-          style={{ color: textColors.primary }}
         />
       )}
     </button>
