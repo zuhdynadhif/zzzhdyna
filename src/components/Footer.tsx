@@ -16,8 +16,8 @@ const Footer: React.FC<FooterProps> = ({ neumorphismStyle, neumorphismButton, ne
           className="p-8 mb-8"
           style={neumorphismStyle}
         >
-          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mb-4">Let&apos;s Connect!</h3>
-          <p className="text-sm md:text-base text-gray-600 mb-6">
+          <h3 className="text-xl md:text-2xl font-bold mb-4">Let&apos;s Connect!</h3>
+          <p className="text-sm md:text-base mb-6">
             I&apos;m always interested in new opportunities and collaborations.
           </p>
           <div className="flex justify-center space-x-4 max-w-md mx-auto">
@@ -30,7 +30,7 @@ const Footer: React.FC<FooterProps> = ({ neumorphismStyle, neumorphismButton, ne
             <a
             key={label}
             href={href}
-            className="p-3 text-gray-700 hover:text-blue-600 transition-colors"
+            className="p-3 hover:text-blue-600 transition-colors"
             style={neumorphismButton}
             aria-label={label}
             >
@@ -45,7 +45,7 @@ const Footer: React.FC<FooterProps> = ({ neumorphismStyle, neumorphismButton, ne
             />
           </div>
         </div>
-        <div className="text-sm md:text-base flex items-center justify-center text-gray-600">
+        <div className="text-sm md:text-base flex items-center justify-center">
           <span>Made with</span>
           <Heart size={16} className="mx-2 text-red-500" />
           <span>and lots of coffee ☕</span>

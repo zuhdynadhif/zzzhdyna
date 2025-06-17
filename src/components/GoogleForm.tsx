@@ -77,7 +77,7 @@ const GoogleForm: React.FC<GoogleFormProps> = ({ neumorphismButton, neumorphismI
       <div className="relative">
         <textarea
           placeholder="Text Me Anything (Anonymous)"
-          className="w-full p-4 pr-16 text-xs text-gray-700 border rounded-lg focus:outline-none focus:shadow-outline"
+          className="w-full p-4 pr-16 text-xs border rounded-lg focus:outline-none focus:shadow-outline"
           style={{
             backgroundImage: "url('/anonymous.png')",
             backgroundSize: '30px 30px',
@@ -94,7 +94,7 @@ const GoogleForm: React.FC<GoogleFormProps> = ({ neumorphismButton, neumorphismI
       </div>
       <button
         type="submit"
-        className="mt-4 w-full p-3 text-xs text-gray-800 rounded-lg hover:bg-blue-600 transition-colors" // Reduced text size to xs
+        className="mt-4 w-full p-3 text-xs rounded-lg hover:bg-blue-600 transition-colors" // Reduced text size to xs
         style={isSubmitting || cooldownActive ? neumorphismInset : neumorphismButton} // Conditional style
         disabled={isSubmitting || cooldownActive}
       >
