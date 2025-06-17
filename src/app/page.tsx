@@ -17,7 +17,7 @@ import Footer from '../components/Footer';
 const Portfolio = () => {
   const [scrollY, setScrollY] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
-  const { isDark, toggleTheme, neumorphismStyle, neumorphismInset, neumorphismButton } = useTheme();
+  const { isDark, toggleTheme, neumorphismStyle, neumorphismInset, neumorphismButton, textColors } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -63,7 +63,12 @@ const Portfolio = () => {
       )}
       
       {!isLoading && (
-        <div className="min-h-screen" style={{ background: backgroundColor }}>
+        <div 
+          className="min-h-screen" 
+          style={{ 
+            background: backgroundColor,
+            color: textColors.primary,
+          }}>
           <ThemeToggleButton />
           
           <Navbar 
