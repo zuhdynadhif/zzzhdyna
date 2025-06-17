@@ -8,7 +8,7 @@ interface NavbarProps {
 }
 
 const menuItems = [
-  { href: "#about", label: "About" },
+  { href: "#intro", label: "About" },
   { href: "#projects", label: "Projects" },
   { href: "#education", label: "Education" },
   { href: "#experience", label: "Experience" },
@@ -20,6 +20,17 @@ const Navbar: React.FC<NavbarProps> = ({ neumorphismStyle, neumorphismInset }) =
   const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
+
+  const handleSmoothScroll = (targetId: string) => {
+    const element = document.querySelector(targetId);
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+    setIsOpen(false);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -94,25 +105,24 @@ const Navbar: React.FC<NavbarProps> = ({ neumorphismStyle, neumorphismInset }) =
             </svg>
           </button>
         </div>
-        
-        {/* Desktop Menu - Floating */}
+          {/* Desktop Menu - Floating */}
         <div className="hidden md:flex space-x-2">
           {menuItems.map((item, index) => (
-            <Link
+            <button
               key={item.label}
-              href={item.href} 
+              onClick={() => handleSmoothScroll(item.href)}
               style={{
                 ...neumorphismStyle,
                 animation: `floatIn 0.6s ease-out ${index * 0.1}s both`
               }}
-              className="text-black hover:text-gray-600 px-4 py-2 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+              className="text-black hover:text-gray-600 px-4 py-2 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 cursor-pointer"
             >
               <div
                 className="font-medium transition-colors duration-200"
               >
                 {item.label}
               </div>
-            </Link>
+            </button>
           ))}
         </div>
       </div>
@@ -129,8 +139,7 @@ const Navbar: React.FC<NavbarProps> = ({ neumorphismStyle, neumorphismInset }) =
             }}
             className="fixed top-20 left-4 right-4 rounded-xl p-6 shadow-2xl z-[1001] md:hidden"
             onClick={(e) => e.stopPropagation()}
-          >
-            <ul className="flex flex-col space-y-3">
+          >            <ul className="flex flex-col space-y-3">
               {menuItems.map((item, index) => (
                 <li 
                   key={item.label}
@@ -138,13 +147,9 @@ const Navbar: React.FC<NavbarProps> = ({ neumorphismStyle, neumorphismInset }) =
                     animation: `slideIn 0.4s ease-out ${index * 0.1}s both`
                   }}
                 >
-                  <Link 
-                    href={item.href} 
-                    onClick={() => {
-                      setIsOpen(false);
-                      setIsVisible(true);
-                    }}
-                    className="block"
+                  <button 
+                    onClick={() => handleSmoothScroll(item.href)}
+                    className="block w-full text-left"
                   >
                     <div
                       style={neumorphismInset}
@@ -152,7 +157,7 @@ const Navbar: React.FC<NavbarProps> = ({ neumorphismStyle, neumorphismInset }) =
                     >
                       {item.label}
                     </div>
-                  </Link>
+                  </button>
                 </li>
               ))}
             </ul>
