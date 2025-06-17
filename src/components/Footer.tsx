@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heart, Github, Linkedin, Mail, Instagram } from 'lucide-react';
+import { Github, Linkedin, Mail, Instagram } from 'lucide-react';
 import GoogleForm from './GoogleForm';
 import { useTheme } from '../context/ThemeContext';
 
@@ -49,10 +49,9 @@ const Footer: React.FC<FooterProps> = ({ neumorphismStyle, neumorphismButton, ne
             />
           </div>
         </div>
-        <div className="text-sm md:text-base flex items-center justify-center">
-          <span>Made with</span>
-          <Heart size={16} className="mx-2 text-red-500" />
-          <span>and lots of coffee ☕</span>
+        <div className="max-w-7xl mx-auto">
+          <p>© {new Date().getFullYear()} Zuhdy Nadhif Ayyasy. All rights reserved.</p>
+          <p className="text-sm mt-2">Free Palestine 𓂆🍉</p>
         </div>
       </div>
     </footer>
