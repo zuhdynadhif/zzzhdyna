@@ -7,12 +7,14 @@ import ProjectsSection from '../components/ProjectsSection';
 import EducationSection from '../components/EducationSection';
 import ExperienceSection from '../components/ExperienceSection';
 import CoursesSection from '../components/CoursesSection';
+import LoadingPage from '../components/LoadingPage';
 // import TechStackSection from '../components/TechStackSection';
 // import CompetitionSection from '../components/CompetitionSection';
 import Footer from '../components/Footer';
 
 const Portfolio = () => {
   const [scrollY, setScrollY] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -43,62 +45,72 @@ const Portfolio = () => {
     border: 'none',
     transition: 'all 0.2s ease'
   };
-
   return (
-    <div className="min-h-screen" style={{ background: '#e0e5ec' }}>
-      <Navbar 
-        neumorphismStyle={neumorphismStyle} 
-        neumorphismInset={neumorphismInset} 
-      />
+    <>
+      {isLoading && (
+        <LoadingPage 
+          duration={7000} // 3 seconds loading time - you can adjust this
+          onComplete={() => setIsLoading(false)}
+        />
+      )}
       
-      <HeroSection 
-        scrollY={scrollY} 
-        neumorphismStyle={neumorphismStyle} 
-        neumorphismInset={neumorphismInset} 
-        neumorphismButton={neumorphismButton} 
-      />
-      
-      <ProjectsSection 
-        scrollY={scrollY} 
-        neumorphismStyle={neumorphismStyle} 
-        neumorphismInset={neumorphismInset} 
-        neumorphismButton={neumorphismButton} 
-      />
-      
-      <EducationSection 
-        scrollY={scrollY} 
-        neumorphismStyle={neumorphismStyle} 
-      />
-      
-      <ExperienceSection 
-        scrollY={scrollY} 
-        neumorphismStyle={neumorphismStyle} 
-      />
-      
-      <CoursesSection 
-        scrollY={scrollY} 
-        neumorphismStyle={neumorphismStyle} 
-        neumorphismInset={neumorphismInset} 
-      />
-      
-      {/* <TechStackSection 
-        scrollY={scrollY} 
-        neumorphismStyle={neumorphismStyle} 
-        neumorphismInset={neumorphismInset} 
-      />
-      
-      <CompetitionSection 
-        scrollY={scrollY} 
-        neumorphismStyle={neumorphismStyle} 
-        neumorphismInset={neumorphismInset} 
-      /> */}
-      
-      <Footer 
-        neumorphismStyle={neumorphismStyle} 
-        neumorphismButton={neumorphismButton}
-        neumorphismInset={neumorphismInset}
-      />
-    </div>
+      {!isLoading && (
+        <div className="min-h-screen" style={{ background: '#e0e5ec' }}>
+          <Navbar 
+            neumorphismStyle={neumorphismStyle} 
+            neumorphismInset={neumorphismInset} 
+          />
+          
+          <HeroSection 
+            scrollY={scrollY} 
+            neumorphismStyle={neumorphismStyle} 
+            neumorphismInset={neumorphismInset} 
+            neumorphismButton={neumorphismButton} 
+          />
+          
+          <ProjectsSection 
+            scrollY={scrollY} 
+            neumorphismStyle={neumorphismStyle} 
+            neumorphismInset={neumorphismInset} 
+            neumorphismButton={neumorphismButton} 
+          />
+          
+          <EducationSection 
+            scrollY={scrollY} 
+            neumorphismStyle={neumorphismStyle} 
+          />
+          
+          <ExperienceSection 
+            scrollY={scrollY} 
+            neumorphismStyle={neumorphismStyle} 
+          />
+          
+          <CoursesSection 
+            scrollY={scrollY} 
+            neumorphismStyle={neumorphismStyle} 
+            neumorphismInset={neumorphismInset} 
+          />
+          
+          {/* <TechStackSection 
+            scrollY={scrollY} 
+            neumorphismStyle={neumorphismStyle} 
+            neumorphismInset={neumorphismInset} 
+          />
+          
+          <CompetitionSection 
+            scrollY={scrollY} 
+            neumorphismStyle={neumorphismStyle} 
+            neumorphismInset={neumorphismInset} 
+          /> */}
+          
+          <Footer 
+            neumorphismStyle={neumorphismStyle} 
+            neumorphismButton={neumorphismButton}
+            neumorphismInset={neumorphismInset}
+          />
+        </div>
+      )}
+    </>
   );
 };
 
