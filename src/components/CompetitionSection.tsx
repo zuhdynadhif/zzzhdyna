@@ -20,8 +20,8 @@ const CompetitionSection: React.FC<CompetitionSectionProps> = ({
           style={neumorphismStyle}
         >
           <Trophy size={48} className="text-yellow-600 mx-auto mb-4" />
-          <h2 className="text-2xl md:text-4xl font-bold text-gray-800 mb-4">Competition Experience</h2>
-          <p className="text-gray-600 text-base md:text-lg">Achievements and recognitions</p>
+          <h2 className="text-2xl md:text-4xl font-bold mb-4">Competition Experience</h2>
+          <p className="base md:text-lg">Achievements and recognitions</p>
         </div>
         
         <div className="grid md:grid-cols-2 gap-8">
@@ -38,12 +38,12 @@ const CompetitionSection: React.FC<CompetitionSectionProps> = ({
             >
               <div className="flex justify-between items-start mb-4">
                 <div>
-                  <h3 className="text-lg font-bold text-gray-800">{comp.name}</h3>
+                  <h3 className="text-lg font-bold">{comp.name}</h3>
                   <p className="text-green-600 font-semibold text-lg">{comp.achievement}</p>
                 </div>
-                <span className="text-gray-600 font-semibold">{comp.year}</span>
+                <span className="font-semibold">{comp.year}</span>
               </div>
-              <p className="text-gray-600 mb-2">{comp.organizer}</p>
+              <p className="mb-2">{comp.organizer}</p>
               <span 
                 className="inline-block px-3 py-1 text-sm font-semibold rounded-full"
                 style={neumorphismInset}
