@@ -9,8 +9,8 @@ import EducationSection from '../components/EducationSection';
 import ExperienceSection from '../components/ExperienceSection';
 import CoursesSection from '../components/CoursesSection';
 import LoadingPage from '../components/LoadingPage';
-// import TechStackSection from '../components/TechStackSection';
-// import CompetitionSection from '../components/CompetitionSection';
+import TechStackSection from '../components/TechStackSection';
+import CompetitionSection from '../components/CompetitionSection';
 import Footer from '../components/Footer';
 
 const Portfolio = () => {
@@ -30,7 +30,7 @@ const Portfolio = () => {
     <>
       {isLoading && (
         <LoadingPage 
-          duration={2000} // 3 seconds loading time - you can adjust this
+          duration={1000} // 3 seconds loading time - you can adjust this
           onComplete={() => setIsLoading(false)}
         />
       )}
@@ -77,7 +77,7 @@ const Portfolio = () => {
             neumorphismInset={neumorphismInset} 
           />
           
-          {/* <TechStackSection 
+          <TechStackSection 
             scrollY={scrollY} 
             neumorphismStyle={neumorphismStyle} 
             neumorphismInset={neumorphismInset} 
@@ -87,7 +87,7 @@ const Portfolio = () => {
             scrollY={scrollY} 
             neumorphismStyle={neumorphismStyle} 
             neumorphismInset={neumorphismInset} 
-          /> */}
+          />
           
           <Footer 
             neumorphismStyle={neumorphismStyle} 

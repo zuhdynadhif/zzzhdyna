@@ -17,20 +17,20 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
   neumorphismInset, 
   neumorphismButton 
 }) => {
-  const { hoverColors } = useTheme();
+  const { textColors, hoverColors } = useTheme();
 
   const [isMobile, setIsMobile] = useState(false);
 
-useEffect(() => {
-  const checkMobile = () => {
-    setIsMobile(window.innerWidth < 768);
-  };
-  
-  checkMobile();
-  window.addEventListener('resize', checkMobile);
-  
-  return () => window.removeEventListener('resize', checkMobile);
-}, []);
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   return (
     <section id="projects" className="py-20 p-4 overflow-x-hidden">
@@ -39,7 +39,7 @@ useEffect(() => {
           className="text-center mb-16 p-8"
           style={neumorphismStyle}
         >
-          <Code size={48} className="text-purple-600 mx-auto mb-4" />
+          <Code size={48} className="mx-auto mb-4" style={{ color: textColors.accent }}/>
           <h2 className="text-2xl md:text-4xl font-bold mb-4">Projects</h2>
           <p className="text-base md:text-lg">Showcasing my technical skills through real-world applications</p>
         </div>
@@ -129,6 +129,8 @@ useEffect(() => {
                       href={project.github}
                       className="flex items-center px-4 py-2 transition-colors"
                       style={{...neumorphismButton}}
+                      onMouseEnter={(e) => e.currentTarget.style.color = hoverColors.accent}
+                      onMouseLeave={(e) => e.currentTarget.style.color = ''}
                     >
                       <Github size={18} className="mr-2" />
                       Code
@@ -139,6 +141,8 @@ useEffect(() => {
                       href={project.demo}
                       className="flex items-center px-4 py-2 transition-colors"
                       style={{...neumorphismButton}}
+                      onMouseEnter={(e) => e.currentTarget.style.color = hoverColors.accent}
+                      onMouseLeave={(e) => e.currentTarget.style.color = ''}
                     >
                       <Award size={18} className="mr-2" />
                       Demo

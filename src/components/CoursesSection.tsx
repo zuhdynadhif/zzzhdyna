@@ -1,6 +1,7 @@
 import React from 'react';
 import { Code } from 'lucide-react';
 import coursesData from '../data/courses';
+import { useTheme } from '@/context/ThemeContext';
 
 interface CoursesSectionProps {
   scrollY: number;
@@ -8,7 +9,9 @@ interface CoursesSectionProps {
   neumorphismInset: React.CSSProperties;
 }
 
-const CoursesSection: React.FC<CoursesSectionProps> = ({ scrollY, neumorphismStyle, neumorphismInset }) => {  return (
+const CoursesSection: React.FC<CoursesSectionProps> = ({ scrollY, neumorphismStyle, neumorphismInset }) => {
+  const { textColors } = useTheme();
+  return (
     <section id="courses" className="py-20 p-4">
       <div className="max-w-6xl mx-auto">
         <div 
@@ -18,7 +21,7 @@ const CoursesSection: React.FC<CoursesSectionProps> = ({ scrollY, neumorphismSty
             opacity: scrollY > 150 ? 1 : 0.4
           }}
         >
-          <Code size={48} className="text-green-600 mx-auto mb-4" />
+          <Code size={48} className="mx-auto mb-4" style={{ color: textColors.accent }}/>
           <h2 className="text-2xl md:text-4xl font-bold mb-4">Notable Courses</h2>
           <p className="text-base md:text-lg">Key courses that shaped my technical foundation</p>
         </div>          
@@ -51,7 +54,7 @@ const CoursesSection: React.FC<CoursesSectionProps> = ({ scrollY, neumorphismSty
               >
               <div className="flex justify-between items-start mb-3">
                 <h3 className="text-lg md:text-2lg font-bold">{course.name}</h3>
-                <span className="text-xs md:text-base text-blue-600 font-semibold">{course.year}</span>
+                <span className="text-xs md:text-base font-semibold" style={{ color: textColors.accent }}>{course.year}</span>
               </div>
               <p className="text-sm md:text-base mb-2">{course.provider}</p>
               <span 

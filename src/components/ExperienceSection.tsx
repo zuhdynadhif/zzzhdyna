@@ -1,6 +1,7 @@
 import React from 'react';
 import { Users } from 'lucide-react';
 import organizationData from '../data/experience';
+import { useTheme } from '@/context/ThemeContext';
 
 interface ExperienceSectionProps {
   scrollY: number;
@@ -13,6 +14,7 @@ const ExperienceSection: React.FC<ExperienceSectionProps> = ({
   scrollY,
   neumorphismStyle
 }) => {
+  const { textColors } = useTheme();
   if (isMobile) {
     return (
       <section id="experience" className="py-20 p-4">
@@ -21,7 +23,7 @@ const ExperienceSection: React.FC<ExperienceSectionProps> = ({
             className="text-center mb-16 p-8"
             style={neumorphismStyle}
           >
-            <Users size={48} className="text-blue-600 mx-auto mb-4" />
+            <Users size={48} className="mx-auto mb-4" style={{ color: textColors.accent }}/>
             <h2 className="text-2xl md:text-4xl font-bold mb-4">Experiences</h2>
             <p className="text-base md:text-lg">Professional, Leadership, and Community Involvement</p>
           </div>
@@ -79,7 +81,7 @@ const ExperienceSection: React.FC<ExperienceSectionProps> = ({
             className="text-center mb-16 p-8"
             style={neumorphismStyle}
           >
-            <Users size={48} className="text-blue-600 mx-auto mb-4" />
+            <Users size={48} className="mx-auto mb-4" style={{ color: textColors.accent }}/>
             <h2 className="text-4xl font-bold mb-4">Experience</h2>
             <p className="text-lg">Leadership and community involvement</p>
           </div>
@@ -103,7 +105,7 @@ const ExperienceSection: React.FC<ExperienceSectionProps> = ({
                     <p className="text-lg font-semibold">{org.role}</p>
                   </div>
                   <div className="text-right">
-                    <span className="text-blue-600 font-semibold">{org.period}</span>
+                    <span className="font-semibold" style={{ color: textColors.accent }}>{org.period}</span>
                   </div>
                 </div>
                 <p className="leading-relaxed">{org.description}</p>

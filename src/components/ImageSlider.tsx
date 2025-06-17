@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import { ImageSliderContent } from '@/types';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { useTheme } from '@/context/ThemeContext';
 
 interface ImageSliderProps {
   images: ImageSliderContent[];
@@ -15,6 +16,7 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
   neumorphismStyle,
   neumorphismButton
 }) => {
+  const { hoverColors } = useTheme();
   const [currentIndex, setCurrentIndex] = useState(0);
     // Function to handle next image
   const nextImage = useCallback(() => {
@@ -48,7 +50,10 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
         {/* Left preview/hint */}
         <div 
           className="transform -translate-x-1/2 w-16 h-16 cursor-pointer hidden md:block"
-          onClick={prevImage} style={neumorphismButton}
+          onClick={prevImage}
+          style={neumorphismButton}
+          onMouseEnter={(e) => e.currentTarget.style.color = hoverColors.button}
+          onMouseLeave={(e) => e.currentTarget.style.color = ''}
         >
           <div className="relative w-full h-full overflow-hidden rounded-full">
             <Image 
@@ -99,6 +104,8 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
           <div 
             className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 rounded-full"
             style={neumorphismButton}
+            onMouseEnter={(e) => e.currentTarget.style.color = hoverColors.button}
+            onMouseLeave={(e) => e.currentTarget.style.color = ''}
           >
             <ChevronRight size={40} />
           </div>

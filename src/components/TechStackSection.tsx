@@ -1,6 +1,7 @@
 import React from 'react';
 import { Award } from 'lucide-react';
 import techStackData from '../data/techstacks';
+import { useTheme } from '@/context/ThemeContext';
 
 interface TechStackSectionProps {
   scrollY: number;
@@ -13,6 +14,7 @@ const TechStackSection: React.FC<TechStackSectionProps> = ({
   neumorphismStyle, 
   neumorphismInset 
 }) => {
+  const { textColors } = useTheme();
   return (
     <section id="techstack" className="py-20 p-4 overflow-x-hidden">
       <div className="max-w-6xl mx-auto">
@@ -20,7 +22,7 @@ const TechStackSection: React.FC<TechStackSectionProps> = ({
           className="text-center mb-16 p-8"
           style={neumorphismStyle}
         >
-          <Award size={48} className="text-red-600 mx-auto mb-4" />
+          <Award size={48} className="mx-auto mb-4" style={{ color: textColors.accent }}/>
           <h2 className="text-2xl md:text-4xl font-bold mb-4">Tech Stack</h2>
           <p className="text-base md:text-lg">Technologies and tools I work with</p>
         </div>
