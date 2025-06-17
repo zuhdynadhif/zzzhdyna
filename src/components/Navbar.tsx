@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { Sun, Moon } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 
 interface NavbarProps {
@@ -21,7 +22,34 @@ const Navbar: React.FC<NavbarProps> = ({ neumorphismStyle, neumorphismInset }) =
   const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
-  const { isDark } = useTheme();
+  const { isDark, toggleTheme, neumorphismButton, textColors } = useTheme();
+
+  const backgroundColor = isDark ? '#2d3748' : '#e0e5ec';
+
+  // Theme toggle button component
+  const ThemeToggleButton = () => (
+    <button
+      onClick={toggleTheme}
+      className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 group"
+      style={{
+        ...neumorphismButton,
+        background: backgroundColor,
+      }}
+      aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+    >
+      {isDark ? (
+        <Sun 
+          className="w-5 h-5 transition-colors duration-200" 
+          style={{ color: textColors.primary }}
+        />
+      ) : (
+        <Moon 
+          className="w-5 h-5 transition-colors duration-200" 
+          style={{ color: textColors.primary }}
+        />
+      )}
+    </button>
+  );
 
   const handleSmoothScroll = (targetId: string) => {
     const element = document.querySelector(targetId);
@@ -73,8 +101,10 @@ const Navbar: React.FC<NavbarProps> = ({ neumorphismStyle, neumorphismInset }) =
         <div className={`text-2xl font-bold`}>
           <Link href="/">zzzhdyna</Link>
         </div>
-        
-        <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-4">
+          {/* Theme Toggle Button */}
+          <ThemeToggleButton />
+          
           {/* Hamburger Menu for mobile */}
           <div className="md:hidden">
             <button
@@ -138,7 +168,7 @@ const Navbar: React.FC<NavbarProps> = ({ neumorphismStyle, neumorphismInset }) =
             style={{
               ...neumorphismStyle,
               backdropFilter: 'blur(20px)',
-              backgroundColor: '#e0e5ec'
+              backgroundColor: isDark ? '#2d3748' : '#e0e5ec'
             }}
             className="fixed top-20 left-4 right-4 rounded-xl p-6 shadow-2xl z-[1001] md:hidden"
             onClick={(e) => e.stopPropagation()}
