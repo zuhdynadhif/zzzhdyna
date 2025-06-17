@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { useTheme } from '../context/ThemeContext';
 
 interface NavbarProps {
   neumorphismStyle: React.CSSProperties;
@@ -20,6 +21,7 @@ const Navbar: React.FC<NavbarProps> = ({ neumorphismStyle, neumorphismInset }) =
   const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const { isDark } = useTheme();
 
   const handleSmoothScroll = (targetId: string) => {
     const element = document.querySelector(targetId);
@@ -52,8 +54,7 @@ const Navbar: React.FC<NavbarProps> = ({ neumorphismStyle, neumorphismInset }) =
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
 
-  return (
-    <nav 
+  return (    <nav 
       style={{
         ...neumorphismStyle,
         position: 'fixed',
@@ -64,46 +65,48 @@ const Navbar: React.FC<NavbarProps> = ({ neumorphismStyle, neumorphismInset }) =
         transform: isVisible ? 'translateY(0)' : 'translateY(-100%)',
         transition: 'transform 0.3s ease-in-out',
         backdropFilter: 'blur(10px)',
-        backgroundColor: '#e0e5ec'
+        backgroundColor: isDark ? '#2d3748' : '#e0e5ec'
       }} 
       className="p-4 shadow-lg"
     >
       <div className="container mx-auto flex justify-between items-center">
-        <div className="text-2xl font-bold text-black">
+        <div className={`text-2xl font-bold ${isDark ? 'text-white' : 'text-black'}`}>
           <Link href="/">zzzhdyna</Link>
         </div>
         
-        {/* Hamburger Menu for mobile */}
-        <div className="md:hidden">
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="text-black focus:outline-none relative z-50"
-            aria-label="Toggle menu"
-          >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
+        <div className="flex items-center space-x-4">
+          {/* Hamburger Menu for mobile */}
+          <div className="md:hidden">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className={`${isDark ? 'text-white' : 'text-black'} focus:outline-none relative z-50`}
+              aria-label="Toggle menu"
             >
-              {isOpen ? (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              ) : (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16m-7 6h7"
-                />
-              )}
-            </svg>
-          </button>
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                {isOpen ? (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                ) : (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16m-7 6h7"
+                  />
+                )}
+              </svg>
+            </button>
+          </div>
         </div>
           {/* Desktop Menu - Floating */}
         <div className="hidden md:flex space-x-2">

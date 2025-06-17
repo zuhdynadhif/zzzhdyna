@@ -1,6 +1,7 @@
 import React from 'react';
 import { ChevronDown, Github, Linkedin, Mail, Instagram } from 'lucide-react';
 import Image from 'next/image';
+import { useTheme } from '../context/ThemeContext';
 
 interface HeroSectionProps {
   scrollY: number;
@@ -9,7 +10,10 @@ interface HeroSectionProps {
   neumorphismButton: React.CSSProperties;
 }
 
-const HeroSection: React.FC<HeroSectionProps> = ({ scrollY, neumorphismStyle, neumorphismButton }) => {  return (
+const HeroSection: React.FC<HeroSectionProps> = ({ scrollY, neumorphismStyle, neumorphismButton }) => {
+  const { textColors } = useTheme();
+  
+  return (
     <section
       id="intro"
       className="h-screen flex justify-center p-4 md:p-6 w-full overflow-x-hidden box-border"
@@ -33,14 +37,13 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollY, neumorphismStyle, ne
             height={175} 
             className="object-cover rounded-lg"
           />
-        </div>        
-        <h1 className="text-xl md:text-3xl font-bold text-gray-500 mb-2 md:mb-4">
-          Hi, I&apos;m <span className="text-black">Zuhdy Nadhif <span className='text-fuchsia-900'>Ayyasy</span></span>
+        </div>          <h1 className="text-xl md:text-3xl font-bold mb-2 md:mb-4" style={{ color: textColors.secondary }}>
+          Hi, I&apos;m <span style={{ color: textColors.primary }}>Zuhdy Nadhif <span className='text-fuchsia-900'>Ayyasy</span></span>
         </h1>
-        <p className="text-base md:text-xl text-gray-600 mb-4 md:mb-8 leading-relaxed">
+        <p className="text-base md:text-xl mb-4 md:mb-8 leading-relaxed" style={{ color: textColors.muted }}>
           Computer Science Student | Awardee BSI Scholarship | Free Palestine 𓂆🍉
         </p>
-        <p className="text-sm md:text-base text-gray-700 mb-6 md:mb-8 max-w-2xl mx-auto">
+        <p className="text-sm md:text-base mb-6 md:mb-8 max-w-2xl mx-auto" style={{ color: textColors.secondary }}>
           Passionate about creating innovative solutions through code. Currently pursuing my degree 
           while building real-world applications and contributing to the tech community.
         </p>
@@ -50,12 +53,14 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollY, neumorphismStyle, ne
             { icon: Linkedin, href: "https://www.linkedin.com/in/zuhdynadhifayyasy/", label: "LinkedIn" },
             { icon: Mail, href: "mailto:zuhdy.nadhif.ayyasy@gmail.com", label: "Email" },
             { icon: Instagram, href: "https://www.instagram.com/zzzhdyna/", label: "Instagram" }
-          ].map(({ icon: Icon, href, label }) => (
-            <a
+          ].map(({ icon: Icon, href, label }) => (            <a
               key={label}
               href={href}
-              className="p-3 text-gray-700 hover:text-blue-600 transition-colors"
-              style={neumorphismButton}
+              className="p-3 hover:text-blue-600 transition-colors"
+              style={{
+                ...neumorphismButton,
+                color: textColors.secondary
+              }}
               aria-label={label}
             >
               <Icon size={20} />
