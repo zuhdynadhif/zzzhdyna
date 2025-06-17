@@ -35,7 +35,8 @@ const Portfolio = () => {
         />
       )}
       
-      {!isLoading && (        <div 
+      {!isLoading && (        
+        <div 
           className="min-h-screen" 
           style={{ 
             background: backgroundColor,
