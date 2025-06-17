@@ -38,8 +38,8 @@ useEffect(() => {
           style={neumorphismStyle}
         >
           <Code size={48} className="text-purple-600 mx-auto mb-4" />
-          <h2 className="text-2xl md:text-4xl font-bold text-gray-800 mb-4">Projects</h2>
-          <p className="text-gray-600 text-base md:text-lg">Showcasing my technical skills through real-world applications</p>
+          <h2 className="text-2xl md:text-4xl font-bold mb-4">Projects</h2>
+          <p className="text-base md:text-lg">Showcasing my technical skills through real-world applications</p>
         </div>
         
         <div className="grid lg:grid-cols-1 gap-8">
@@ -89,7 +89,7 @@ useEffect(() => {
                 }}
               >
                 <div className="flex justify-between items-start mb-4">
-                  <h3 className="text-base md:text-xl font-bold text-gray-800">{project.title}</h3>
+                  <h3 className="text-base md:text-xl font-bold">{project.title}</h3>
                   <span className={`px-3 py-1 rounded-full text-xs md:text-sm font-semibold ${
                     project.status === 'Completed' ? 'bg-green-100 text-green-800' :
                     project.status === 'In Progress' ? 'bg-yellow-100 text-yellow-800' :
@@ -99,16 +99,16 @@ useEffect(() => {
                   </span>
                 </div>
 
-                <p className="text-sm md:text-base text-gray-700 mb-6 leading-relaxed">{project.description}</p>
+                <p className="text-sm md:text-base mb-6 leading-relaxed">{project.description}</p>
 
                 <div className="mb-6">
-                  <h4 className="text-sm font-semibold text-gray-600 mb-3">Technologies Used:</h4>
+                  <h4 className="text-sm font-semibold mb-3">Technologies Used:</h4>
                   <div className="flex flex-wrap gap-2">
                     {project.technologies.map((tech) => (
                       <a
                         href={`https://www.google.com/search?q=${encodeURIComponent(tech)}`}
                         key={tech}
-                        className="px-3 py-1 text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors cursor-pointer"
+                        className="px-3 py-1 text-sm font-medium hover:text-blue-600 transition-colors cursor-pointer"
                         style={neumorphismInset}
                         target="_blank"
                         rel="noopener noreferrer"
@@ -123,8 +123,8 @@ useEffect(() => {
                   {project.github && (
                     <a
                       href={project.github}
-                      className="flex items-center px-4 py-2 text-gray-700 hover:text-blue-600 transition-colors"
-                      style={neumorphismButton}
+                      className="flex items-center px-4 py-2 transition-colors"
+                      style={{...neumorphismButton}}
                     >
                       <Github size={18} className="mr-2" />
                       Code
@@ -133,8 +133,8 @@ useEffect(() => {
                   {project.demo && (
                     <a
                       href={project.demo}
-                      className="flex items-center px-4 py-2 text-gray-700 hover:text-green-600 transition-colors"
-                      style={neumorphismButton}
+                      className="flex items-center px-4 py-2 transition-colors"
+                      style={{...neumorphismButton}}
                     >
                       <Award size={18} className="mr-2" />
                       Demo
