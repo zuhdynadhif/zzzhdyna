@@ -60,7 +60,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollY, neumorphismStyle, ne
         </div>
         <div className="mb-6 md:mb-8 flex justify-center">
           <a
-            href="https://drive.google.com/file/d/1OW7qzxAScgWEPL9aqUNf5uMCT6D1suke/view?usp=sharing" // Replace with your actual Google Drive CV link
+            href="https://drive.google.com/file/d/1wb8HQdVhZeYt-9dUF2v5tSkoKDlTAijd/view?usp=sharing" // Replace with your actual Google Drive CV link
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-12 py-3 text-sm md:text-base font-medium transition-all duration-300 transform hover:scale-105"
