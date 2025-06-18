@@ -11,6 +11,7 @@ interface ThemeContextType {
   textColors: {
     primary: string;
     secondary: string;
+    contrast: string;
     accent: string;
     muted: string;
     styled1: string;
@@ -19,6 +20,7 @@ interface ThemeContextType {
   hoverColors: {
     primary: string;
     secondary: string;
+    contrast: string;
     accent: string;
     button: string;
     link: string;
@@ -94,6 +96,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   };  const textColors = {
     primary: isDark ? '#f7fafc' : '#2d3748',
     secondary: isDark ? '#e2e8f0' : '#4a5568', 
+    contrast: isDark ? '#2d3748' : '#f7fafc',
     accent: isDark ? '#9f7aea' : '#805ad5',
     muted: isDark ? '#a0aec0' : '#718096',
     styled1: isDark ? '#f6ad55' : '#dd6b20',
@@ -103,6 +106,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   const hoverColors = {
     primary: isDark ? '#ffffff' : '#1a202c',
     secondary: isDark ? '#f7fafc' : '#2d3748',
+    contrast: isDark ? '#2d3748' : '#f7fafc',
     accent: isDark ? '#b794f6' : '#6b46c1',
     button: isDark ? '#ffd700' : '#3182ce',
     link: isDark ? '#63b3ed' : '#2b6cb0',

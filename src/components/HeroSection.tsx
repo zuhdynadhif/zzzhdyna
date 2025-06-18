@@ -64,17 +64,21 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollY, neumorphismStyle, ne
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-12 py-3 text-sm md:text-base font-medium transition-all duration-300 transform hover:scale-105"
-            style={neumorphismButton}
+            style={{
+              ...neumorphismButton,
+              color: textColors.contrast,
+              backgroundImage: `linear-gradient(135deg, ${textColors.accent} 0%, ${textColors.styled2} 100%)`,
+            }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.color = hoverColors.link;
+              e.currentTarget.style.color = hoverColors.contrast;
               e.currentTarget.style.transform = 'translateY(-4px)';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.color = '';
+              e.currentTarget.style.color = textColors.contrast;
               e.currentTarget.style.transform = '';
             }}
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="animate-pulse">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="animate-none">
               <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
               <polyline points="14 2 14 8 20 8"></polyline>
               <line x1="16" y1="13" x2="8" y2="13"></line>
