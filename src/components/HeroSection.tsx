@@ -49,15 +49,15 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollY, neumorphismStyle, ne
         <p className="text-sm md:text-base mb-2 md:mb-6 leading-relaxed">
           Computer Science Student | Awardee BSI Scholarship | Free Palestine 𓂆🍉
         </p>
-        <p className="flex text-xs md:text-sm mb-1 md:mb-2 max-w-2xl mx-auto">
-          <MapPin size={15} className='m-1' /> Depok, Indonesia
-        </p>
-        <p className="flex text-xs md:text-sm mb-1 md:mb-2 max-w-2xl mx-auto">
-          <University size={15} className='m-1' /> Universitas Indonesia
-        </p>
-        <p className="flex text-xs md:text-sm mb-2 md:mb-6 max-w-2xl mx-auto">
-          <BadgeCheck size={15} className='m-1' /> Available for Opportunities
-        </p>
+        <div className="flex items-center justify-center text-xs md:text-sm mb-1 md:mb-2">
+          <MapPin size={15} className="mr-1" /> Depok, Indonesia
+        </div>
+        <div className="flex items-center justify-center text-xs md:text-sm mb-1 md:mb-2">
+          <University size={15} className="mr-1" /> Universitas Indonesia
+        </div>
+        <div className="flex items-center justify-center text-xs md:text-sm mb-2 md:mb-6">
+          <BadgeCheck size={15} className="mr-1" /> Available for Opportunities
+        </div>
         <div className="mb-6 md:mb-8 flex justify-center">
           <a
             href="https://drive.google.com/file/d/1OW7qzxAScgWEPL9aqUNf5uMCT6D1suke/view?usp=sharing" // Replace with your actual Google Drive CV link
