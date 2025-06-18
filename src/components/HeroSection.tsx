@@ -55,7 +55,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollY, neumorphismStyle, ne
         <div className="flex items-center justify-center text-xs md:text-sm mb-1 md:mb-2">
           <University size={15} className="mr-1" /> Universitas Indonesia
         </div>
-        <div className="flex items-center justify-center text-xs md:text-sm mb-2 md:mb-6">
+        <div className="flex items-center justify-center text-xs md:text-sm mb-4 md:mb-6">
           <BadgeCheck size={15} className="mr-1" /> Available for Opportunities
         </div>
         <div className="mb-6 md:mb-8 flex justify-center">
