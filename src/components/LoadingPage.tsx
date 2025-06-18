@@ -171,7 +171,7 @@ const LoadingPage: React.FC<LoadingPageProps> = ({ duration = 3000, onComplete }
               fontFamily: isDark ? "'Inter', sans-serif" : "'Poppins', sans-serif"
             }}
           >
-            Loading your portfolio...
+            Loading...
           </p>
         </div>
       </div><style jsx>{`
