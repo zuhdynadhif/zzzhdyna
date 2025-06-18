@@ -36,7 +36,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollY, neumorphismStyle, ne
           }}
         >
           <Image 
-            src="/IMG_9735_edited.jpg" 
+            src="/profile_picture.jpg" 
             alt="Profile picture" 
             width={typeof window !== 'undefined' && window.innerHeight < 700 ? 108 : 175} 
             height={typeof window !== 'undefined' && window.innerHeight < 700 ? 108 : 175} 
