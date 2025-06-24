@@ -34,8 +34,6 @@ const CompetitionSection: React.FC<CompetitionSectionProps> = ({
               className="p-6 transition-all duration-500"
               style={{
                 ...neumorphismStyle,
-                transform: `scale(${1 + Math.sin((scrollY - 3200 + index * 100) * 0.003) * 0.03}) 
-                           translateY(${Math.cos((scrollY - 3200 + index * 100) * 0.002) * 10}px)`,
                 opacity: scrollY > 3100 + index * 100 ? 1 : 0.3
               }}
             >

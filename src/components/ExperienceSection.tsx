@@ -87,16 +87,12 @@ const ExperienceSection: React.FC<ExperienceSectionProps> = ({
           </div>
           
           <div className="space-y-8">
-            {organizationData.map((org, index) => (
+            {organizationData.map((org) => (
               <div
                 key={org.id}
                 className="p-8 transition-all duration-600"
                 style={{
                   ...neumorphismStyle,
-                  transform: `translateX(${index % 2 === 0 ? 
-                    Math.max(0, Math.min(300, -((scrollY - 5100) - (index) * 80) * 12)) : 
-                    Math.min(0, Math.max(-300, ((scrollY - 5100) - (index) * 80) * 12))}px)`,
-                  opacity: scrollY > 5100 + index * 80 ? 1 : 0.2
                 }}
               >
                 <div className="flex justify-between items-start mb-4">

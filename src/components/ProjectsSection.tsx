@@ -77,16 +77,12 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
               console.log('offsetX is ', offsetX, 'Mobile view detected, disabling horizontal animation');
             }
 
-            const opacity = scrollY > threshold - 100 ? 1 : 0;
-
             return (
               <div
                 key={project.id}
                 className="p-8 transition-all duration-700 ease-out"
                 style={{
                   ...neumorphismStyle,
-                  transform: !isMobile ? `translateX(${offsetX}px)` : 'none',
-                  opacity: isMobile ? 1 : opacity,
                   maxWidth: '100%'
                 }}
               >

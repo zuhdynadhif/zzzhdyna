@@ -32,7 +32,6 @@ const EducationSection: React.FC<EducationSectionProps> = ({ scrollY, neumorphis
               className="p-8 transition-all duration-500"
               style={{
                 ...neumorphismStyle,
-                transform: `scale(${1 + Math.sin((scrollY - 1400 + index * 50) * 0.002) * 0.02})`,
                 opacity: scrollY > 650 + 150 * index ? 1 : 0.4
               }}
             >

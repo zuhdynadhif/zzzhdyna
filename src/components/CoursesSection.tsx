@@ -28,16 +28,8 @@ const CoursesSection: React.FC<CoursesSectionProps> = ({ scrollY, neumorphismSty
         <div className="grid md:grid-cols-2 gap-6">
           {coursesData.map((course, index) => {
             const groupIndex = Math.floor(index/2);
-            const fromLeft = index % 2 === 0;
 
             const threshold = 4200 + groupIndex * 150;
-            const maxDistance = 150;            let offsetX = fromLeft
-              ? Math.min(0, -(threshold - scrollY) * 0.5)
-              : Math.max(0, (threshold - scrollY) * 0.5);
-
-            offsetX = fromLeft
-              ? Math.max(-maxDistance, offsetX)
-              : Math.min(maxDistance, offsetX);
 
             const opacity = scrollY > threshold - 100 ? 1 : 0;
 
@@ -48,7 +40,6 @@ const CoursesSection: React.FC<CoursesSectionProps> = ({ scrollY, neumorphismSty
                 className="p-6 transition-all duration-500"
                 style={{
                   ...neumorphismStyle,
-                  transform: 'translateX(' + offsetX + 'px)',
                   opacity: opacity
                 }}
               >
