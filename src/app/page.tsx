@@ -15,7 +15,7 @@ import Footer from '../components/Footer';
 
 const Portfolio = () => {
   const [scrollY, setScrollY] = useState(0);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const { isDark, textColors, neumorphismStyle, neumorphismInset, neumorphismButton } = useTheme();
 
   useEffect(() => {
@@ -30,7 +30,7 @@ const Portfolio = () => {
     <>
       {isLoading && (
         <LoadingPage 
-          duration={1000} // 3 seconds loading time - you can adjust this
+          duration={3000} // 3 seconds loading time - you can adjust this
           onComplete={() => setIsLoading(false)}
         />
       )}
